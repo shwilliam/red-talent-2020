@@ -1,0 +1,32 @@
+{
+  "connection": "default",
+  "collectionName": "students",
+  "info": {
+    "name": "student",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "Bio": {
+      "type": "text"
+    },
+    "Image": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload"
+    },
+    "LinkedinURL": {
+      "type": "string"
+    },
+    "PortfolioURL": {
+      "type": "string"
+    }
+  }
+}
