@@ -12,8 +12,8 @@ function App() {
   return (
     <Root>
       <nav>
-        <Link to="/">Home</Link>
-        <Link to="/dynamic">Dynamic</Link>
+        <Link to="/">home</Link>
+        <Link to="/students">all</Link>
       </nav>
       <div className="content">
         <React.Suspense fallback={<em>Loading...</em>}>

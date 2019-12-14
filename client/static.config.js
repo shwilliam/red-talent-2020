@@ -1,13 +1,20 @@
 import path from 'path'
 import axios from 'axios'
+import {SERVER_URL} from './config'
 
 export default {
   getRoutes: async () => {
     const students = await axios
-      .get('http://localhost:1337/students')
+      .get(`${SERVER_URL}/students`)
       .then(res => res.data)
 
     return [
+      {
+        path: '/students',
+        getData: () => ({
+          students,
+        }),
+      },
       {
         path: '/profile',
         getData: () => ({
