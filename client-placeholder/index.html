@@ -10,6 +10,56 @@
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 <body>
-  hello world
+  <main>
+    <h1>RED Talent Connect 2020</h1>
+  </main>
+
+  <form method="POST" action="https://formspree.io/XXXXXX">
+    <fieldset>
+      <legend>Select Interest:</legend>
+      <label>
+        <input type="checkbox" name="interest" value="ux">
+        UX
+      </label>
+      <label>
+        <input type="checkbox" name="interest" value="ui">
+        UI
+      </label>
+      <label>
+        <input type="checkbox" name="interest" value="dev">
+        Dev
+      </label>
+      <label>
+        <input type="checkbox" name="interest" value="dm">
+        DM
+      </label>
+    </fieldset>
+
+    <label>
+      Full Name
+      <input type="text" name="name" required>
+    </label>
+
+    <label>
+      Email
+      <input type="email" name="_replyto" required>
+    </label>
+
+    <label>
+      Company
+      <input type="text" name="company">
+    </label>
+
+    <label>
+      Phone Number
+      <input
+        type="tel"
+        name="phone"
+        pattern="^\+?\d{0,13}"
+      >
+    </label>
+
+    <button type="submit">Connect</button>
+  </form>
 </body>
 </html>
