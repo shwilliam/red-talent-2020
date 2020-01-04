@@ -1,3 +1,79 @@
+/* 
+ * CSS Reset
+ * Based on Eric Meyer CSS reset (v2)
+ */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+abbr,
+acronym,
+address,
+img,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+caption,
+article,
+aside,
+details,
+figure,
+figcaption,
+footer,
+header,
+menu,
+nav,
+section,
+summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+/* 
+ * Site styles
+ */
+
 :root {
   --spacing-v: 1.25rem;
   --spacing-v--s: 0.5rem;
