@@ -1,5 +1,11 @@
 /* Based on Eric Meyer CSS reset (v2) */
 
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
 html,
 body,
 div,

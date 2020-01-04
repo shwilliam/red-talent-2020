@@ -18,6 +18,12 @@ body {
   height: 100%;
 }
 
+.site-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
 .header {
   padding: var(--spacing-v) var(--spacing-h);
   background: var(--color-grey);
@@ -55,7 +61,6 @@ body {
   flex: 1;
   display: flex;
   align-items: center;
-  background-color: red;
   color: #fff;
   padding-right: 10%;
   background: linear-gradient(
@@ -74,6 +79,7 @@ body {
   .section__contact {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
 }
 
@@ -83,12 +89,18 @@ body {
 }
 
 .title--mobile {
-  margin-top: var(--spacing-v);
+  margin: calc(2 * var(--spacing-v)) 0;
   text-align: center;
 }
 
 .title--desktop {
   margin-top: -8rem;
+}
+
+.contact-form,
+.section__about-content {
+  max-width: 520px;
+  margin: 0 auto;
 }
 
 .label,
