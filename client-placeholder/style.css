@@ -127,6 +127,12 @@ body {
   border-radius: 0;
 }
 
+.input:invalid {
+  border-color: var(--color-red);
+  outline: none;
+  box-shadow: none;
+}
+
 .select__container {
   display: flex;
   justify-content: space-between;
