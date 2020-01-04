@@ -9,64 +9,92 @@
   <title>RED Talent 2020</title>
   <!-- TODO: seo tags (ie. description) -->
 
+  <link rel="stylesheet" type="text/css" href="./reset.css" />
   <link rel="stylesheet" type="text/css" href="./style.css" />
 </head>
 
-<body class="layout-container">
-  <main class="about-section">
-    <h1>Connect with the RED Talent</h1>
+<body>
+  <header class="header">
+    logo
+  </header>
 
-    <p>hello world</p>
+  <main class="section__container">
+    <section class="section__about">
+      <div>
+        <h1 class="title bold">Connect with the RED Talent</h1>
+
+        <p class="paragraph">
+          Save a spot and tell us more about the skills you are looking for. We will send you relevant information to make this process more efficient and effective for you or your company.
+        </p>
+
+        <p class="paragraph">
+          Official website will be launching soon
+        </p>
+
+        <p class="paragraph bold">
+          We will send you updates of the event shortly
+        </p>
+      </div>
+    </section>
+
+    <section class="section__contact">
+      <form
+        class="contact-form"
+        method="POST"
+        action="https://formspree.io/XXXXXX"
+      >
+        <fieldset class="select__container">
+          <legend class="label select__title">
+            Select Interest:
+          </legend>
+          <label class="label select__label">
+            <input type="checkbox" name="interest" value="ux">
+            UX
+          </label>
+          <label class="label select__label">
+            <input type="checkbox" name="interest" value="ui">
+            UI
+          </label>
+          <label class="label select__label">
+            <input type="checkbox" name="interest" value="dev">
+            Dev
+          </label>
+          <label class="label select__label">
+            <input type="checkbox" name="interest" value="dm">
+            DM
+          </label>
+        </fieldset>
+
+        <label class="label label--block">
+          Full Name
+          <input class="input" type="text" name="name" required>
+        </label>
+
+        <label class="label label--block">
+          Email
+          <input class="input" type="email" name="_replyto" required>
+        </label>
+
+        <label class="label label--block">
+          Company
+          <input class="input" type="text" name="company">
+        </label>
+
+        <label class="label label--block">
+          Phone Number
+          <input
+            class="input"
+            type="tel"
+            name="phone"
+            pattern="^\+?\d{0,13}"
+          >
+        </label>
+
+        <div class="center">
+          <button class="button" type="submit">Connect</button>
+        </div>
+      </form>
+    </section>
   </main>
-
-  <section class="contact-section">
-    <form method="POST" action="https://formspree.io/XXXXXX">
-      <fieldset>
-        <legend>Select Interest:</legend>
-        <label>
-          <input type="checkbox" name="interest" value="ux">
-          UX
-        </label>
-        <label>
-          <input type="checkbox" name="interest" value="ui">
-          UI
-        </label>
-        <label>
-          <input type="checkbox" name="interest" value="dev">
-          Dev
-        </label>
-        <label>
-          <input type="checkbox" name="interest" value="dm">
-          DM
-        </label>
-      </fieldset>
-
-      <label>
-        Full Name
-        <input type="text" name="name" required>
-      </label>
-
-      <label>
-        Email
-        <input type="email" name="_replyto" required>
-      </label>
-
-      <label>
-        Company
-        <input type="text" name="company">
-      </label>
-
-      <label>
-        Phone Number
-        <input
-          type="tel"
-          name="phone"
-          pattern="^\+?\d{0,13}"
-        >
-      </label>
-
-      <button class="button" type="submit">Connect</button>
-    </form>
-  </section>
 </body>
 </html>
