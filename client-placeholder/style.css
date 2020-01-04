@@ -2,6 +2,12 @@
   --spacing-v: 1.25rem;
   --spacing-v--s: 0.5rem;
   --spacing-h: 3.5rem;
+  --spacing-h--s: 0.3rem;
+  --color-red: #e2231a;
+  --color-dark-red: #c10909;
+  --color-white: #fff;
+  --color-black: #000;
+  --color-grey: #808285;
 }
 
 html,
@@ -28,7 +34,7 @@ body {
 
 .section__about {
   flex: 1;
-  background-color: #e2231a;
+  background-color: red;
   color: #fff;
   padding-right: 10%;
 }
@@ -42,7 +48,7 @@ body {
 }
 
 .header {
-  background: #808285;
+  background: var(--color-grey);
 }
 
 .title {
@@ -66,11 +72,11 @@ body {
   width: 100%;
   margin-top: var(--spacing-v--s);
   background-color: transparent;
-  color: #000;
+  color: var(--color-black);
   border-top: 0;
   border-right: 0;
   border-left: 0;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--color-black);
   border-radius: 0;
 }
 
@@ -87,6 +93,35 @@ body {
   margin-bottom: var(--spacing-v--s);
 }
 
+.select__label {
+  white-space: nowrap;
+}
+
+.select__checkbox {
+  position: absolute;
+  top: -999rem;
+  left: -999rem;
+}
+
+.select__control {
+  --size: 0.7rem;
+  display: inline-block;
+  width: var(--size);
+  height: var(--size);
+  margin-right: var(--spacing-h--s);
+  position: relative;
+  top: 1px;
+  border: 1px solid var(--color-black);
+}
+
+.select__checkbox:focus + .select__control {
+  border-color: var(--color-red);
+}
+
+.select__checkbox:checked + .select__control {
+  background-color: var(--color-black);
+}
+
 .paragraph {
   display: inline-block;
   margin-top: var(--spacing-v);
@@ -97,17 +132,17 @@ body {
   padding: 0.5rem 2.5rem;
   border: none;
   border-radius: 0.1rem;
-  color: #fff;
+  color: var(--color-white);
   font-weight: 600;
   cursor: pointer;
 
   transition: background-color 0.4s ease-in-out;
-  background-color: #e2231a;
+  background-color: var(--color-red);
 }
 
 .button:focus,
 .button:hover {
-  background-color: #c10909;
+  background-color: var(--color-dark-red);
 }
 
 .bold {
