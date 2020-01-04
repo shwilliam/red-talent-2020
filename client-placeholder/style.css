@@ -2,3 +2,17 @@ html,
 body {
   font-family: sans-serif;
 }
+
+.layout-container {
+  display: flex;
+}
+
+.about-section,
+.contact-section {
+  flex: 1;
+}
+
+.button {
+  color: #fff;
+  background-color: rgb(226, 36, 26);
+}
