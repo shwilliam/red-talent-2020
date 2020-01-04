@@ -18,6 +18,18 @@ body {
   height: 100%;
 }
 
+.header {
+  padding: var(--spacing-v) var(--spacing-h);
+  background: var(--color-grey);
+}
+
+.logo {
+  position: relative;
+  top: 3px;
+  width: auto;
+  height: 26px;
+}
+
 .section__container {
   display: flex;
   flex-direction: column;
@@ -63,14 +75,6 @@ body {
     display: flex;
     align-items: center;
   }
-}
-
-.header {
-  padding: var(--spacing-v--s) var(--spacing-h);
-}
-
-.header {
-  background: var(--color-grey);
 }
 
 .title {
