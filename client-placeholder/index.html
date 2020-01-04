@@ -9,7 +9,306 @@
   <title>RED Talent 2020</title>
   <!-- TODO: seo tags (ie. description) -->
 
-  <link rel="stylesheet" type="text/css" href="./style.css" />
+  <style>
+    /*
+     * CSS Reset
+     * Based on Eric Meyer CSS reset (v2)
+     */
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body,
+    div,
+    span,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    a,
+    abbr,
+    acronym,
+    address,
+    img,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    caption,
+    article,
+    aside,
+    details,
+    figure,
+    figcaption,
+    footer,
+    header,
+    menu,
+    nav,
+    section,
+    summary {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+    }
+
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+
+    body {
+      line-height: 1;
+    }
+
+    /*
+     * Site styles
+     */
+
+    :root {
+      --spacing-v: 1.25rem;
+      --spacing-v--s: 0.5rem;
+      --spacing-h: 3.5rem;
+      --spacing-h--s: 0.3rem;
+      --color-red: #e2231a;
+      --color-dark-red: #c10909;
+      --color-white: #fff;
+      --color-black: #000;
+      --color-grey: #808285;
+    }
+
+    html,
+    body {
+      font-family: sans-serif;
+      font-size: 15px;
+      line-height: 1.25;
+      height: 100%;
+    }
+
+    .site-layout {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .header {
+      padding: var(--spacing-v) var(--spacing-h);
+      background: var(--color-grey);
+    }
+
+    .logo {
+      position: relative;
+      top: 3px;
+      width: auto;
+      height: 26px;
+    }
+
+    .section__container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @media (min-width: 700px) {
+      .section__container {
+        height: 100%;
+        min-height: 500px;
+        flex-direction: row;
+      }
+    }
+
+    .section__about,
+    .section__contact {
+      flex-shrink: 0;
+      height: 100%;
+      min-height: 500px;
+      padding: 1rem var(--spacing-h);
+    }
+
+    .section__about {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      padding-right: 10%;
+      background: linear-gradient(
+          rgba(226, 36, 26, 0.5),
+          rgba(226, 36, 26, 0.5)
+        ),
+        url(https://images.unsplash.com/photo-1531496681078-27dc2277e898?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80)
+          no-repeat center / cover;
+    }
+
+    .section__contact {
+      flex: 1.2;
+    }
+
+    @media (min-width: 700px) {
+      .section__contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+
+    .title {
+      margin: var(--spacing-v) 0;
+      font-size: 2.2rem;
+    }
+
+    .title--mobile {
+      margin: calc(2 * var(--spacing-v)) 0;
+      text-align: center;
+    }
+
+    .title--desktop {
+      margin-top: -8rem;
+    }
+
+    .contact-form,
+    .section__about-content {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .label,
+    .input,
+    .button {
+      font-size: 0.85rem;
+    }
+
+    .label--block {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: var(--spacing-v);
+    }
+
+    .input {
+      width: 100%;
+      margin-top: var(--spacing-v--s);
+      background-color: transparent;
+      color: var(--color-black);
+      border-top: 0;
+      border-right: 0;
+      border-left: 0;
+      border-bottom: 1px solid var(--color-black);
+      border-radius: 0;
+    }
+
+    .input:invalid {
+      border-color: var(--color-red);
+      outline: none;
+      box-shadow: none;
+    }
+
+    .select__container {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: var(--spacing-v);
+      padding-bottom: var(--spacing-v--s);
+      border: none;
+    }
+
+    .select__title {
+      width: 100%;
+      margin-bottom: var(--spacing-v--s);
+    }
+
+    .select__label {
+      white-space: nowrap;
+    }
+
+    .select__checkbox {
+      position: absolute;
+      top: -999rem;
+      left: -999rem;
+    }
+
+    .select__control {
+      --size: 0.7rem;
+      display: inline-block;
+      width: var(--size);
+      height: var(--size);
+      margin-right: var(--spacing-h--s);
+      position: relative;
+      top: 1px;
+      border: 1px solid var(--color-black);
+    }
+
+    .select__checkbox:focus + .select__control {
+      border-color: var(--color-red);
+    }
+
+    .select__checkbox:checked + .select__control {
+      background-color: var(--color-black);
+    }
+
+    .paragraph {
+      display: inline-block;
+      margin-top: var(--spacing-v);
+    }
+
+    .button {
+      margin: var(--spacing-v) 0;
+      padding: 0.5rem 2.5rem;
+      border: none;
+      border-radius: 0.1rem;
+      color: var(--color-white);
+      font-weight: 600;
+      cursor: pointer;
+
+      transition: background-color 0.4s ease-in-out;
+      background-color: var(--color-red);
+    }
+
+    .button:focus,
+    .button:hover {
+      background-color: var(--color-dark-red);
+    }
+
+    .bold {
+      font-weight: 600;
+    }
+
+    .center {
+      width: 100%;
+      text-align: center;
+    }
+
+    .desktop-only {
+      display: none;
+    }
+
+    @media (min-width: 700px) {
+      .mobile-only {
+        display: none;
+      }
+
+      .desktop-only {
+        display: inherit;
+      }
+    }
+  </style>
 </head>
 
 <body class="site-layout">
