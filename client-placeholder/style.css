@@ -46,6 +46,12 @@ body {
   background-color: red;
   color: #fff;
   padding-right: 10%;
+  background: linear-gradient(
+      rgba(226, 36, 26, 0.5),
+      rgba(226, 36, 26, 0.5)
+    ),
+    url(https://images.unsplash.com/photo-1531496681078-27dc2277e898?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1567&q=80)
+      no-repeat center / cover;
 }
 
 .section__contact {
