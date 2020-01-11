@@ -1,9 +1,9 @@
 import React from 'react'
 import {useRouteData} from 'react-static'
-import {Link} from 'components/Router'
 
 export default function Students() {
-  const {students} = useRouteData()
+  const {profiles} = useRouteData()
+
   return (
     <div>
       <h1>Students</h1>
@@ -14,18 +14,9 @@ export default function Students() {
       </div>
       <br />
       <ul>
-        {students.map(s => (
-          <li key={s.id}>
-            <Link
-              to={`/profile/${s.Name.split(' ')
-                .join('_')
-                .toLowerCase()}/`}
-            >
-              {s.Name}
-            </Link>
-          </li>
-        ))}
+        {profiles.map(s => console.log(s.profileAlternative.name))}
       </ul>
+      {JSON.stringify(profiles)}
       <a href="#top" id="bottom">
         Scroll to top!
       </a>

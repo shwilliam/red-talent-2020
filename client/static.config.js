@@ -1,35 +1,49 @@
 import path from 'path'
-import axios from 'axios'
-import {SERVER_URL} from './config'
+import scrapedin from 'scrapedin'
+
+const LINKEDIN_IDS = [
+  'william-lindvall',
+  'edin-kaymakqi-3243b3163',
+  'robertohhr',
+]
 
 export default {
   getRoutes: async () => {
-    const students = await axios
-      .get(`${SERVER_URL}/students`)
-      .then(res => res.data)
+    const profiles = await scrapedin({
+      email: 'w-lindvall@outlook.com',
+      password: 'PASSWORD',
+    })
+      .then(scraper =>
+        Promise.all(
+          LINKEDIN_IDS.map(id =>
+            scraper(`https://www.linkedin.com/in/${id}`),
+          ),
+        ),
+      )
+      .then(d => console.log(d) || d)
 
     return [
       {
         path: '/students',
         getData: () => ({
-          students,
+          profiles,
         }),
       },
-      {
-        path: '/profile',
-        getData: () => ({
-          students,
-        }),
-        children: students.map(student => ({
-          path: `/${student.Name.split(' ')
-            .join('_')
-            .toLowerCase()}`,
-          template: 'src/containers/Student',
-          getData: () => ({
-            student,
-          }),
-        })),
-      },
+      // {
+      //   path: '/profile',
+      //   getData: () => ({
+      //     students,
+      //   }),
+      //   children: students.map(student => ({
+      //     path: `/${student.Name.split(' ')
+      //       .join('_')
+      //       .toLowerCase()}`,
+      //     template: 'src/containers/Student',
+      //     getData: () => ({
+      //       student,
+      //     }),
+      //   })),
+      // },
     ]
   },
   plugins: [
