@@ -1,49 +1,30 @@
 import path from 'path'
 import scrapedin from 'scrapedin'
+import {LINKEDIN_IDS} from './data'
 
-const LINKEDIN_IDS = [
-  'william-lindvall',
-  'edin-kaymakqi-3243b3163',
-  'robertohhr',
-]
+require('dotenv').config()
 
 export default {
   getRoutes: async () => {
+    // fetch students linkedin profile data
     const profiles = await scrapedin({
-      email: 'w-lindvall@outlook.com',
-      password: 'PASSWORD',
-    })
-      .then(scraper =>
-        Promise.all(
-          LINKEDIN_IDS.map(id =>
-            scraper(`https://www.linkedin.com/in/${id}`),
-          ),
+      email: process.env.REACT_APP_LINKEDIN_EMAIL,
+      password: process.env.REACT_APP_LINKEDIN_PASSWORD,
+    }).then(scraper =>
+      Promise.all(
+        LINKEDIN_IDS.map(id =>
+          scraper(`https://www.linkedin.com/in/${id}`),
         ),
-      )
-      .then(d => console.log(d) || d)
+      ),
+    )
 
     return [
       {
-        path: '/students',
+        path: '/',
         getData: () => ({
           profiles,
         }),
       },
-      // {
-      //   path: '/profile',
-      //   getData: () => ({
-      //     students,
-      //   }),
-      //   children: students.map(student => ({
-      //     path: `/${student.Name.split(' ')
-      //       .join('_')
-      //       .toLowerCase()}`,
-      //     template: 'src/containers/Student',
-      //     getData: () => ({
-      //       student,
-      //     }),
-      //   })),
-      // },
     ]
   },
   plugins: [

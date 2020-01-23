@@ -1,28 +1,19 @@
 import React from 'react'
 import {Root, Routes, addPrefetchExcludes} from 'react-static'
-import {Link, Router} from 'components/Router'
-import Dynamic from 'containers/Dynamic'
+import {Router} from '@reach/router'
+import {LoadingPage} from './components'
 
-import './App.css'
-
-// Any routes that start with 'dynamic' will be treated as non-static routes
+// any routes that start with 'dynamic' will be treated as non-static routes
 addPrefetchExcludes(['dynamic'])
 
 function App() {
   return (
     <Root>
-      <nav>
-        <Link to="/">home</Link>
-        <Link to="/students">all</Link>
-      </nav>
-      <div className="content">
-        <React.Suspense fallback={<em>Loading...</em>}>
-          <Router>
-            <Dynamic path="dynamic" />
-            <Routes path="*" />
-          </Router>
-        </React.Suspense>
-      </div>
+      <React.Suspense fallback={<LoadingPage />}>
+        <Router>
+          <Routes path="*" />
+        </Router>
+      </React.Suspense>
     </Root>
   )
 }
