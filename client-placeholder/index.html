@@ -98,7 +98,7 @@
 
       html,
       body {
-        font-family: 'Roboto', Arial, Helvetica, sans-serif;
+        font-family: "Roboto", Arial, Helvetica, sans-serif;
         font-size: 22px;
         line-height: 1.25;
         height: 100%;
@@ -117,6 +117,7 @@
 
       .logo {
         position: relative;
+        z-index: 999;
         top: 3px;
         width: auto;
         height: 26px;
@@ -127,12 +128,7 @@
           background: transparent;
           position: absolute;
           top: 0;
-          bottom: 0;
           left: 0;
-          right: 0;
-        }
-        .logo {
-          left: 50px;
         }
       }
 
@@ -161,6 +157,7 @@
         flex: 1;
         display: flex;
         align-items: flex-start;
+        position: relative;
         padding-top: 20%;
         color: #fff;
         padding-right: 10%;
@@ -195,15 +192,19 @@
       }
 
       .title--desktop {
-        margin-top: -8rem;
         font-size: 60px;
-        width: 80%;
       }
 
       .contact-form,
       .section__about-content {
         max-width: 520px;
         margin: 0 auto;
+      }
+
+      .section__about-content {
+        position: absolute;
+        top: 80px;
+        padding-right: 50px;
       }
 
       .label,
@@ -258,18 +259,22 @@
         top: -999rem;
         left: -999rem;
       }
-
-      .label .sneaky-label {
+      input:placeholder-shown + .sneaky-label {
         position: relative;
         top: 35px;
         color: #777;
         transition: all 0.3s ease-in-out;
       }
 
-      .label:focus-within .sneaky-label {
+      .label .sneaky-label {
         top: 0;
         color: black;
         font-size: 0.6rem;
+      }
+
+      .phone-confidential {
+        font-size: 10px;
+        font-weight: 100;
       }
 
       .select__control {
@@ -318,7 +323,7 @@
       }
 
       .bold {
-        font-family: 'Roboto Bold', Arial, Helvetica, sans-serif;
+        font-family: "Roboto Bold", Arial, Helvetica, sans-serif;
       }
 
       .center {
@@ -468,6 +473,16 @@
                 class="select__checkbox"
                 type="checkbox"
                 name="interest"
+                value="dev"
+              />
+              <span class="select__control"></span>
+              Dev
+            </label>
+            <label class="label select__label">
+              <input
+                class="select__checkbox"
+                type="checkbox"
+                name="interest"
                 value="ux"
               />
               <span class="select__control"></span>
@@ -482,16 +497,6 @@
               />
               <span class="select__control"></span>
               UI
-            </label>
-            <label class="label select__label">
-              <input
-                class="select__checkbox"
-                type="checkbox"
-                name="interest"
-                value="dev"
-              />
-              <span class="select__control"></span>
-              Dev
             </label>
             <label class="label select__label">
               <input
@@ -516,18 +521,22 @@
           </label>
 
           <label class="label label--block">
-            <span class="sneaky-label">Company</span>
-            <input class="input" type="text" name="company" required />
+            <span class="sneaky-label">Company (Optional)</span>
+            <input class="input" type="text" name="company" />
           </label>
 
           <label class="label label--block">
-            <span class="sneaky-label">Phone Number(Optional)</span>
+            <span class="sneaky-label">Phone Number (Optional)</span>
             <input
               class="input"
               type="tel"
               name="phone"
               pattern="^\+?\d{0,13}"
             />
+            <span class="phone-confidential"
+              >Your phone number is kept confidential and not shared with
+              others</span
+            >
           </label>
 
           <div class="center">
@@ -537,4 +546,19 @@
       </section>
     </main>
   </body>
+  <script>
+    const name = document.getElementsByClassName("input")[0];
+    const email = document.getElementsByClassName("input")[1];
+    const company = document.getElementsByClassName("input")[2];
+    const phone = document.getElementsByClassName("input")[3];
+
+    function clearInput() {
+      name.value = "";
+      email.value = "";
+      company.value = "";
+      phone.value = "";
+    }
+
+    window.onload = clearInput;
+  </script>
 </html>
