@@ -266,6 +266,11 @@
         font-size: 0.6rem;
       }
 
+      .phone-confidential {
+        font-size: 10px;
+        font-weight: 100;
+      }
+
       .select__control {
         --size: 0.7rem;
         display: inline-block;
@@ -510,18 +515,22 @@
           </label>
 
           <label class="label label--block">
-            <span class="sneaky-label">Company</span>
+            <span class="sneaky-label">Company (Optional)</span>
             <input class="input" type="text" name="company" required />
           </label>
 
           <label class="label label--block">
-            <span class="sneaky-label">Phone Number(Optional)</span>
+            <span class="sneaky-label">Phone Number (Optional)</span>
             <input
               class="input"
               type="tel"
               name="phone"
               pattern="^\+?\d{0,13}"
             />
+            <span class="phone-confidential"
+              >Your phone number is kept confidential and not shared with
+              others</span
+            >
           </label>
 
           <div class="center">
