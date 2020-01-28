@@ -531,5 +531,19 @@
       </section>
     </main>
   </body>
-  <!-- <script></script> -->
+  <script>
+    const name = document.getElementsByClassName("input")[0];
+    const email = document.getElementsByClassName("input")[1];
+    const company = document.getElementsByClassName("input")[2];
+    const phone = document.getElementsByClassName("input")[3];
+
+    function clearInput() {
+      name.value = "";
+      email.value = "";
+      company.value = "";
+      phone.value = "";
+    }
+
+    window.onload = clearInput;
+  </script>
 </html>
