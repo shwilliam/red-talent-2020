@@ -3,6 +3,7 @@
   "private": true,
   "scripts": {
     "start": "react-static start",
+    "serve": "http-server ./dist",
     "stage": "react-static build --staging",
     "build": "react-static build",
     "analyze": "react-static build --analyze",
@@ -22,6 +23,7 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.0.2",
+    "http-server": "^0.12.1",
     "serve": "^11.1.0"
   }
 }
