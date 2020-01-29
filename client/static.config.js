@@ -10,13 +10,15 @@ export default {
     const profiles = await scrapedin({
       email: process.env.REACT_APP_LINKEDIN_EMAIL,
       password: process.env.REACT_APP_LINKEDIN_PASSWORD,
-    }).then(scraper =>
-      Promise.all(
-        Object.keys(LINKEDIN_IDS).map(id =>
-          scraper(`https://www.linkedin.com/in/${id}`),
+    })
+      .then(scraper =>
+        Promise.all(
+          Object.keys(LINKEDIN_IDS).map(id =>
+            scraper(`https://www.linkedin.com/in/${id}`),
+          ),
         ),
-      ),
-    )
+      )
+      .then(console.log)
 
     return [
       {

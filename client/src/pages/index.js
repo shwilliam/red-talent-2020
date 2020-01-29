@@ -11,6 +11,7 @@ import {LINKEDIN_IDS} from '../../data'
 
 const Home = () => {
   const {profiles} = useRouteData()
+  console.log(profiles)
   const [filter, setFilter] = useState([])
 
   console.log(profiles)
