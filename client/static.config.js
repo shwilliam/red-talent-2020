@@ -12,7 +12,7 @@ export default {
       password: process.env.REACT_APP_LINKEDIN_PASSWORD,
     }).then(scraper =>
       Promise.all(
-        LINKEDIN_IDS.map(id =>
+        Object.keys(LINKEDIN_IDS).map(id =>
           scraper(`https://www.linkedin.com/in/${id}`),
         ),
       ),
