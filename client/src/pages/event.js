@@ -32,7 +32,7 @@ const Event = () => {
             mobile applications using the most in-demand technologies.
           </p>
         </Collapsible>
-        <Collapsible dep='DEVELOPMENT'>
+        <Collapsible dep='DIGITAL MARKETING'>
           <p>
             Digital Marketing students create and deploy online strategies, and
             are versed in today’s core industry skills.
