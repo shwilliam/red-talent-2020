@@ -6,8 +6,7 @@
     "serve": "http-server ./dist",
     "stage": "react-static build --staging",
     "build": "react-static build",
-    "analyze": "react-static build --analyze",
-    "serve": "serve dist -p 3000"
+    "analyze": "react-static build --analyze"
   },
   "dependencies": {
     "@reach/router": "^1.2.1",
