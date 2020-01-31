@@ -1,14 +1,24 @@
-import LoadingPage from './LoadingPage'
-import ProfileGrid from './ProfileGrid'
-import ProfileGridItem from './ProfileGridItem'
-import ProfileCard from './ProfileCard'
-import Button from './Button'
-import Title from './Title'
-import SubTitle from './Subtitle'
-import Collapsible from './Collapsible'
+import Header from "./Header";
+import Input from "./Input";
+import GraduatesLabel from "./GraduatesLabel";
+import Label from "./Label";
+import LoadingPage from "./LoadingPage";
+import Paragraph from "./Paragraph";
+import ProfileGrid from "./ProfileGrid";
+import ProfileGridItem from "./ProfileGridItem";
+import ProfileCard from "./ProfileCard";
+import Button from "./Button";
+import Title from "./Title";
+import SubTitle from "./Subtitle";
+import Collapsible from "./Collapsible";
 
 export {
+  Header,
+  Input,
+  GraduatesLabel,
+  Label,
   LoadingPage,
+  Paragraph,
   ProfileGrid,
   ProfileGridItem,
   ProfileCard,
@@ -16,4 +26,4 @@ export {
   Title,
   SubTitle,
   Collapsible
-}
+};

@@ -1,5 +1,19 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
-const ProfileGrid = ({children}) => <ul>{children}</ul>
+const StyledUl = styled.ul`
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1.5rem;
+  justify-content: center;
+  padding: 0;
 
-export default ProfileGrid
+  @media only screen and (min-width: 700px) {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 5rem;
+  }
+`;
+
+const ProfileGrid = ({ children }) => <StyledUl>{children}</StyledUl>;
+
+export default ProfileGrid;
