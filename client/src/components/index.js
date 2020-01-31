@@ -1,3 +1,4 @@
+import GraduatesContainer from "./GraduatesContainer";
 import Label from "./Label";
 import LoadingPage from "./LoadingPage";
 import ProfileGrid from "./ProfileGrid";
@@ -9,6 +10,7 @@ import SubTitle from "./Subtitle";
 import Collapsible from "./Collapsible";
 
 export {
+  GraduatesContainer,
   Label,
   LoadingPage,
   ProfileGrid,

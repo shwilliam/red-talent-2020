@@ -6,7 +6,8 @@ import {
   ProfileCard,
   Title,
   SubTitle,
-  Label
+  Label,
+  GraduatesContainer
 } from "../components";
 import { LINKEDIN_IDS } from "../../data";
 
@@ -33,7 +34,7 @@ const Home = () => {
   };
 
   return (
-    <>
+    <GraduatesContainer>
       <header>
         <Title>Graduates</Title>
 
@@ -121,7 +122,7 @@ const Home = () => {
           Event promoted by <a href="https://redacademy.com/">RED Academy</a>
         </p>
       </footer>
-    </>
+    </GraduatesContainer>
   );
 };
 
