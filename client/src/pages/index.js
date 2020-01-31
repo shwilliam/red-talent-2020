@@ -15,7 +15,7 @@ import { LINKEDIN_IDS } from "../../data";
 const Home = () => {
   const { profiles } = useRouteData();
   console.log(profiles);
-  const [filter, setFilter] = useState([]);
+  const [filter, setFilter] = useState(["dev"]);
 
   console.log(profiles);
   console.log("f", filter);
@@ -25,7 +25,7 @@ const Home = () => {
     const filterCopy = [...filter];
 
     if (e.target.checked || idx === -1) {
-      filterCopy.push(dep);
+      filterCopy.push(dep) && filterCopy.splice(0, 1);
     } else {
       filterCopy.splice(idx, 1);
     }
@@ -47,7 +47,13 @@ const Home = () => {
       </header>
 
       <main>
-        <Label checked={filter.includes("des")}>
+        <Label
+          checked={
+            filter.includes("des") &&
+            !filter.includes("dev") &&
+            !filter.includes("mar")
+          }
+        >
           Designers
           <input
             onChange={e => toggleFilter("des", e)}
@@ -57,7 +63,13 @@ const Home = () => {
           />
         </Label>
 
-        <Label checked={filter.includes("dev")}>
+        <Label
+          checked={
+            filter.includes("dev") &&
+            !filter.includes("des") &&
+            !filter.includes("mar")
+          }
+        >
           Developers
           <input
             onChange={e => toggleFilter("dev", e)}
@@ -67,7 +79,13 @@ const Home = () => {
           />
         </Label>
 
-        <Label checked={filter.includes("mar")}>
+        <Label
+          checked={
+            filter.includes("mar") &&
+            !filter.includes("dev") &&
+            !filter.includes("des")
+          }
+        >
           Marketers
           <input
             onChange={e => toggleFilter("mar", e)}
