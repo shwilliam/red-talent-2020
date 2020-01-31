@@ -5,7 +5,6 @@ const StyledDiv = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  height: 46px;
   padding: 15px 0;
 `;
 

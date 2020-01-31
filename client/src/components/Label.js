@@ -11,6 +11,17 @@ const CheckedLabel = styled.label`
   width: 99px;
   margin: 0 8.5px;
   border: 1px solid #d0382b;
+  height: 46px;
+
+  @media only screen and (min-width: 700px) {
+    font-family: Lato-Bold;
+    width: 280px;
+    height: 32px;
+    margin: 0;
+    border-radius: 6px;
+    border: 4px solid #d0382b;
+    letter-spacing: 0.81px;
+  }
 `;
 const UnCheckedLabel = styled.label`
   display: flex;
@@ -22,6 +33,18 @@ const UnCheckedLabel = styled.label`
   width: 99px;
   margin: 0 8.5px;
   border: 1px solid #d0382b;
+  height: 46px;
+
+  @media only screen and (min-width: 700px) {
+    font-family: Lato-Bold;
+    width: 280px;
+    height: 32px;
+    margin: 0;
+    border-radius: 6px;
+    border: 4px solid #eed7d5;
+    color: #9e9b9b;
+    letter-spacing: 0.81px;
+  }
 `;
 
 const Label = ({ checked, children }) =>
