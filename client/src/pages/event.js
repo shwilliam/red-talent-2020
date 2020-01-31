@@ -1,9 +1,11 @@
 import React from 'react'
 import { Button, Title, Collapsible, SubTitle } from '../components'
+import Navigation from '../components/Navigation'
 
 const Event = () => {
   return (
     <main>
+      <Navigation />
       <Button to='/contact'>Join Event</Button>
       <section>
         <Title>Who are we?</Title>
