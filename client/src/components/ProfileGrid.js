@@ -4,7 +4,7 @@ import styled from "styled-components";
 const StyledUl = styled.ul`
   display: grid;
   grid-template-columns: repeat(2, auto);
-  grid-gap: 1.75rem;
+  grid-gap: 1.5rem;
   justify-content: center;
   padding: 0;
 `;

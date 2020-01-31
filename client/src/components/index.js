@@ -1,5 +1,5 @@
 import Input from "./Input";
-import GraduatesContainer from "./GraduatesContainer";
+import GraduatesLabel from "./GraduatesLabel";
 import Label from "./Label";
 import LoadingPage from "./LoadingPage";
 import Paragraph from "./Paragraph";
@@ -13,7 +13,7 @@ import Collapsible from "./Collapsible";
 
 export {
   Input,
-  GraduatesContainer,
+  GraduatesLabel,
   Label,
   LoadingPage,
   Paragraph,

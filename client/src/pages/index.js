@@ -7,7 +7,7 @@ import {
   Title,
   Input,
   Label,
-  GraduatesContainer,
+  GraduatesLabel,
   Paragraph
 } from "../components";
 import { LINKEDIN_IDS } from "../../data";
@@ -35,7 +35,7 @@ const Home = () => {
   };
 
   return (
-    <GraduatesContainer>
+    <>
       <header>
         <Title>Graduates</Title>
 
@@ -49,53 +49,55 @@ const Home = () => {
       </header>
 
       <main>
-        <Label
-          checked={
-            filter.includes("des") &&
-            !filter.includes("dev") &&
-            !filter.includes("mar")
-          }
-        >
-          Designers
-          <Input
-            onChange={e => toggleFilter("des", e)}
-            type="checkbox"
-            name="filter-design"
-            value="design"
-          />
-        </Label>
+        <GraduatesLabel>
+          <Label
+            checked={
+              filter.includes("des") &&
+              !filter.includes("dev") &&
+              !filter.includes("mar")
+            }
+          >
+            Designers
+            <Input
+              onChange={e => toggleFilter("des", e)}
+              type="checkbox"
+              name="filter-design"
+              value="design"
+            />
+          </Label>
 
-        <Label
-          checked={
-            filter.includes("dev") &&
-            !filter.includes("des") &&
-            !filter.includes("mar")
-          }
-        >
-          Developers
-          <Input
-            onChange={e => toggleFilter("dev", e)}
-            type="checkbox"
-            name="filter-developers"
-            value="developers"
-          />
-        </Label>
+          <Label
+            checked={
+              filter.includes("dev") &&
+              !filter.includes("des") &&
+              !filter.includes("mar")
+            }
+          >
+            Developers
+            <Input
+              onChange={e => toggleFilter("dev", e)}
+              type="checkbox"
+              name="filter-developers"
+              value="developers"
+            />
+          </Label>
 
-        <Label
-          checked={
-            filter.includes("mar") &&
-            !filter.includes("dev") &&
-            !filter.includes("des")
-          }
-        >
-          Marketers
-          <Input
-            onChange={e => toggleFilter("mar", e)}
-            type="checkbox"
-            name="filter-marketers"
-            value="marketers"
-          />
-        </Label>
+          <Label
+            checked={
+              filter.includes("mar") &&
+              !filter.includes("dev") &&
+              !filter.includes("des")
+            }
+          >
+            Marketers
+            <Input
+              onChange={e => toggleFilter("mar", e)}
+              type="checkbox"
+              name="filter-marketers"
+              value="marketers"
+            />
+          </Label>
+        </GraduatesLabel>
 
         <ProfileGrid>
           {profiles
@@ -123,7 +125,7 @@ const Home = () => {
           Event promoted by <a href="https://redacademy.com/">RED Academy</a>
         </p>
       </footer>
-    </GraduatesContainer>
+    </>
   );
 };
 
