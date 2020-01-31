@@ -6,6 +6,7 @@ const StyledLi = styled.li`
   display: flex;
   flex-direction: column;
   width: min-content;
+  box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.33);
 `;
 
 const ProfileGridItem = ({ children }) => <StyledLi>{children}</StyledLi>;

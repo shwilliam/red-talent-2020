@@ -17,6 +17,8 @@ const StyledP = styled.p`
 const StyledImg = styled.img`
   width: 155px;
   height: 200px;
+  border-radius: 6px 6px 0 0;
+  object-fit: cover;
 `;
 
 const ProfileCard = ({ name, imgUrl }) => (

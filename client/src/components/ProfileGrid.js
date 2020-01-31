@@ -2,8 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledUl = styled.ul`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-gap: 1.75rem;
+  justify-content: center;
   padding: 0;
 `;
 
