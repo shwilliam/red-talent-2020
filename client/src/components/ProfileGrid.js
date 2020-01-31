@@ -1,5 +1,10 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
-const ProfileGrid = ({children}) => <ul>{children}</ul>
+const StyledUl = styled.ul`
+  padding: 0;
+`;
 
-export default ProfileGrid
+const ProfileGrid = ({ children }) => <StyledUl>{children}</StyledUl>;
+
+export default ProfileGrid;

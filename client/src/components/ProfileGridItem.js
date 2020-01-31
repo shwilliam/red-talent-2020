@@ -1,5 +1,10 @@
-import React from 'react'
+import React from "react";
+import styled from "styled-components";
 
-const ProfileGridItem = ({children}) => <li>{children}</li>
+const StyledLi = styled.li`
+  list-style: none;
+`;
 
-export default ProfileGridItem
+const ProfileGridItem = ({ children }) => <StyledLi>{children}</StyledLi>;
+
+export default ProfileGridItem;
