@@ -47,7 +47,7 @@ const Home = () => {
       </header>
 
       <main>
-        <Label>
+        <Label checked={filter.includes("des")}>
           Designers
           <input
             onChange={e => toggleFilter("des", e)}
@@ -57,7 +57,7 @@ const Home = () => {
           />
         </Label>
 
-        <Label>
+        <Label checked={filter.includes("dev")}>
           Developers
           <input
             onChange={e => toggleFilter("dev", e)}
@@ -67,7 +67,7 @@ const Home = () => {
           />
         </Label>
 
-        <Label>
+        <Label checked={filter.includes("mar")}>
           Marketers
           <input
             onChange={e => toggleFilter("mar", e)}

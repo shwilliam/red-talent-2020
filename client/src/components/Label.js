@@ -1,15 +1,26 @@
 import React from "react";
 import styled from "styled-components";
 
-const StyledLabel = styled.label`
+const CheckedLabel = styled.label`
+  background-color: #d0382b;
+  color: #fff;
+  font-family: Lato-Regular;
+  width: 50px;
+  padding: 10px 5px;
+`;
+const UnCheckedLabel = styled.label`
   background-color: white;
-  border: 1px solid #d0382b;
-  color: #5c5c5c;
+  color: #000;
   font-family: Lato-Regular;
   width: 50px;
   padding: 10px 5px;
 `;
 
-const Label = ({ children }) => <StyledLabel>{children}</StyledLabel>;
+const Label = ({ checked, children }) =>
+  checked ? (
+    <CheckedLabel>{children}</CheckedLabel>
+  ) : (
+    <UnCheckedLabel>{children}</UnCheckedLabel>
+  );
 
 export default Label;
