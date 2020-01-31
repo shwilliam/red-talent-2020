@@ -6,6 +6,10 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: center;
   padding: 15px 0;
+
+  @media only screen and (min-width: 700px) {
+    padding: 30px 0 50px 0;
+  }
 `;
 
 const GraduatesLabel = ({ children }) => <StyledDiv>{children}</StyledDiv>;

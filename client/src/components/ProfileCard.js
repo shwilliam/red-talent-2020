@@ -8,6 +8,11 @@ const StyledDiv = styled.div`
   justify-content: center;
   align-items: center;
   order: 2;
+
+  @media only screen and (min-width: 700px) {
+    width: 250px;
+    height: 80px;
+  }
 `;
 
 const StyledP = styled.p`
@@ -21,6 +26,11 @@ const StyledImg = styled.img`
   height: 196px;
   border-radius: 6px 6px 0 0;
   object-fit: cover;
+
+  @media only screen and (min-width: 700px) {
+    width: 100%;
+    height: 220px;
+  }
 `;
 
 const ProfileCard = ({ name, imgUrl }) => (

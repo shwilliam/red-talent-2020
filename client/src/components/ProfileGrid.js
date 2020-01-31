@@ -7,6 +7,11 @@ const StyledUl = styled.ul`
   grid-gap: 1.5rem;
   justify-content: center;
   padding: 0;
+
+  @media only screen and (min-width: 700px) {
+    grid-template-columns: repeat(3, auto);
+    grid-gap: 5rem;
+  }
 `;
 
 const ProfileGrid = ({ children }) => <StyledUl>{children}</StyledUl>;

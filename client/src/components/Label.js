@@ -15,11 +15,11 @@ const CheckedLabel = styled.label`
 
   @media only screen and (min-width: 700px) {
     font-family: Lato-Bold;
-    width: 280px;
-    height: 32px;
+    width: 250px;
+    height: 25px;
     margin: 0;
     border-radius: 6px;
-    border: 4px solid #d0382b;
+    border: 3px solid #d0382b;
     letter-spacing: 0.81px;
   }
 `;
@@ -37,11 +37,11 @@ const UnCheckedLabel = styled.label`
 
   @media only screen and (min-width: 700px) {
     font-family: Lato-Bold;
-    width: 280px;
-    height: 32px;
+    width: 250px;
+    height: 25px;
     margin: 0;
     border-radius: 6px;
-    border: 4px solid #eed7d5;
+    border: 3px solid #eed7d5;
     color: #9e9b9b;
     letter-spacing: 0.81px;
   }

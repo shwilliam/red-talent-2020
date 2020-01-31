@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouteData } from "react-static";
 import {
   ProfileGrid,
@@ -58,7 +58,8 @@ const Home = () => {
               !filter.includes("mar")
             }
           >
-            Designers
+            {/* TODO: Change label on mobile and desktop */}
+            Design
             <Input
               onChange={e => toggleFilter("des", e)}
               type="checkbox"
@@ -74,6 +75,7 @@ const Home = () => {
               !filter.includes("mar")
             }
           >
+            {/* TODO: Change label on mobile and desktop */}
             Developers
             <Input
               onChange={e => toggleFilter("dev", e)}
@@ -90,6 +92,8 @@ const Home = () => {
               !filter.includes("des")
             }
           >
+            {" "}
+            {/* TODO: Change label on mobile and desktop */}
             Marketers
             <Input
               onChange={e => toggleFilter("mar", e)}
