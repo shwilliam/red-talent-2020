@@ -1,13 +1,15 @@
-import LoadingPage from './LoadingPage'
-import ProfileGrid from './ProfileGrid'
-import ProfileGridItem from './ProfileGridItem'
-import ProfileCard from './ProfileCard'
-import Button from './Button'
-import Title from './Title'
-import SubTitle from './Subtitle'
-import Collapsible from './Collapsible'
+import Label from "./Label";
+import LoadingPage from "./LoadingPage";
+import ProfileGrid from "./ProfileGrid";
+import ProfileGridItem from "./ProfileGridItem";
+import ProfileCard from "./ProfileCard";
+import Button from "./Button";
+import Title from "./Title";
+import SubTitle from "./Subtitle";
+import Collapsible from "./Collapsible";
 
 export {
+  Label,
   LoadingPage,
   ProfileGrid,
   ProfileGridItem,
@@ -16,4 +18,4 @@ export {
   Title,
   SubTitle,
   Collapsible
-}
+};
