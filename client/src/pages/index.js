@@ -7,7 +7,8 @@ import {
   Title,
   SubTitle,
   Label,
-  GraduatesContainer
+  GraduatesContainer,
+  Paragraph
 } from "../components";
 import { LINKEDIN_IDS } from "../../data";
 
@@ -38,13 +39,13 @@ const Home = () => {
       <header>
         <Title>Graduates</Title>
 
-        <p>
+        <Paragraph>
           Meet the talents you'll connect with at Red Academy's event! Our
           Recent graduates have all worked with real clients, learned today's
           core digital skills and become industry-ready professionals. Their
           Knowledge, passion and innovation will help you move your business to
           the next level!
-        </p>
+        </Paragraph>
       </header>
 
       <main>
