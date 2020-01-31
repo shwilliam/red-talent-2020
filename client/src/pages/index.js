@@ -8,7 +8,8 @@ import {
   Input,
   Label,
   GraduatesLabel,
-  Paragraph
+  Paragraph,
+  Header
 } from "../components";
 import { LINKEDIN_IDS } from "../../data";
 
@@ -36,7 +37,7 @@ const Home = () => {
 
   return (
     <>
-      <header>
+      <Header>
         <Title>Graduates</Title>
 
         <Paragraph>
@@ -46,7 +47,7 @@ const Home = () => {
           Knowledge, passion and innovation will help you move your business to
           the next level!
         </Paragraph>
-      </header>
+      </Header>
 
       <main>
         <GraduatesLabel>

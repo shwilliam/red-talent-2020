@@ -1,3 +1,4 @@
+import Header from "./Header";
 import Input from "./Input";
 import GraduatesLabel from "./GraduatesLabel";
 import Label from "./Label";
@@ -12,6 +13,7 @@ import SubTitle from "./Subtitle";
 import Collapsible from "./Collapsible";
 
 export {
+  Header,
   Input,
   GraduatesLabel,
   Label,
