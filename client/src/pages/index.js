@@ -5,7 +5,7 @@ import {
   ProfileGridItem,
   ProfileCard,
   Title,
-  SubTitle,
+  Input,
   Label,
   GraduatesContainer,
   Paragraph
@@ -57,7 +57,7 @@ const Home = () => {
           }
         >
           Designers
-          <input
+          <Input
             onChange={e => toggleFilter("des", e)}
             type="checkbox"
             name="filter-design"
@@ -73,7 +73,7 @@ const Home = () => {
           }
         >
           Developers
-          <input
+          <Input
             onChange={e => toggleFilter("dev", e)}
             type="checkbox"
             name="filter-developers"
@@ -89,7 +89,7 @@ const Home = () => {
           }
         >
           Marketers
-          <input
+          <Input
             onChange={e => toggleFilter("mar", e)}
             type="checkbox"
             name="filter-marketers"

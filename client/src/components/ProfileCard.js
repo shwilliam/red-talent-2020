@@ -11,6 +11,8 @@ const StyledDiv = styled.div`
 `;
 
 const StyledP = styled.p`
+  font-family: Lato-Bold;
+  color: #555555;
   margin: 0;
 `;
 
