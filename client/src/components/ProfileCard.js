@@ -11,6 +11,7 @@ const DEPS = {
 const TextButton = styled.button`
   display: flex;
   flex-direction: column;
+  padding: 0;
   background-color: transparent;
   border: none;
   font: inherit;
@@ -108,6 +109,7 @@ const StyledDiv = styled.div`
   width: 155px;
   height: 66px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   order: 2;
@@ -141,6 +143,7 @@ const ProfileCard = ({ name, desc, imgUrl, dep }) => (
     <ModalOpenButton>
       <StyledDiv>
         <StyledP>{name}</StyledP>
+        <StyledP>{dep}</StyledP>
       </StyledDiv>
       <StyledImg src={imgUrl} />
     </ModalOpenButton>
