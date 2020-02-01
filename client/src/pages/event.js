@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button, Title, Collapsible, SubTitle } from '../components'
 import Navigation from '../components/Navigation'
+import Footer from '../components/Footer'
 
 const Event = () => {
   return (
@@ -55,6 +56,7 @@ const Event = () => {
         </section>
       </section>
       <Button to='/contact'>Join Event</Button>
+      <Footer />
     </main>
   )
 }
