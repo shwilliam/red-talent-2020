@@ -6,11 +6,10 @@ const StyledLink = styled.a`
   background: #d0382b;
   text-decoration: none;
   padding: 0.8rem 2rem;
-  font-family: Lato-Regular;
   text-align: center;
 `
 
-const Button = ({ to, children }) => (
+const Button = ({to, children}) => (
   <StyledLink href={to}>{children}</StyledLink>
 )
 

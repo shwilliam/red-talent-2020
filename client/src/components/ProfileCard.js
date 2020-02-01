@@ -117,7 +117,7 @@ const StyledDiv = styled.div`
 `
 
 const StyledP = styled.p`
-  font-family: Lato-Bold;
+  font-weight: 700;
   color: #555555;
   margin: 0;
 `
