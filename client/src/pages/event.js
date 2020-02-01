@@ -101,6 +101,7 @@ const Event = () => {
         </EventSection>
       </section>
       <Button to='/contact'>Join Event</Button>
+      <Footer />
     </main>
   )
 }

@@ -1,13 +1,13 @@
 const LINKEDIN_IDS = {
-  'william-lindvall': {
-    dep: ['dev'],
+  "william-lindvall": {
+    dep: ["dev"]
   },
-  'edin-kaymakqi-3243b3163': {
-    dep: ['dev'],
+  "edin-kaymakqi-3243b3163": {
+    dep: ["dev"]
   },
   robertohhr: {
-    dep: ['dev'],
-  },
-}
+    dep: ["dev"]
+  }
+};
 
-export default LINKEDIN_IDS
+export default LINKEDIN_IDS;

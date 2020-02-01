@@ -10,7 +10,12 @@ import Image from './Image'
 import Banner from './Banner'
 
 export {
+  Header,
+  Input,
+  GraduatesLabel,
+  Label,
   LoadingPage,
+  Paragraph,
   ProfileGrid,
   ProfileGridItem,
   ProfileCard,

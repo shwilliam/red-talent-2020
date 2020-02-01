@@ -4,6 +4,12 @@ import {
   ProfileGrid,
   ProfileGridItem,
   ProfileCard,
+  Title,
+  Input,
+  Label,
+  GraduatesLabel,
+  Paragraph,
+  Header,
 } from '../components'
 import {LINKEDIN_IDS} from '../../data'
 
@@ -12,7 +18,7 @@ import {LINKEDIN_IDS} from '../../data'
 const Home = () => {
   const {profiles} = useRouteData()
   console.log(profiles)
-  const [filter, setFilter] = useState([])
+  const [filter, setFilter] = useState(['dev'])
 
   console.log(profiles)
   console.log('f', filter)
@@ -22,7 +28,7 @@ const Home = () => {
     const filterCopy = [...filter]
 
     if (e.target.checked || idx === -1) {
-      filterCopy.push(dep)
+      filterCopy.push(dep) && filterCopy.splice(0, 1)
     } else {
       filterCopy.splice(idx, 1)
     }
@@ -31,49 +37,73 @@ const Home = () => {
 
   return (
     <>
-      <header>
-        <h1>Graduates</h1>
+      <Header>
+        <Title>Graduates</Title>
 
-        <p>
+        <Paragraph>
           Meet the talents you'll connect with at Red Academy's event!
           Our Recent graduates have all worked with real clients,
           learned today's core digital skills and become
           industry-ready professionals. Their Knowledge, passion and
           innovation will help you move your business to the next
           level!
-        </p>
-      </header>
+        </Paragraph>
+      </Header>
 
       <main>
-        <label>
-          Designers
-          <input
-            onChange={e => toggleFilter('des', e)}
-            type="checkbox"
-            name="filter-design"
-            value="design"
-          />
-        </label>
+        <GraduatesLabel>
+          <Label
+            checked={
+              filter.includes('des') &&
+              !filter.includes('dev') &&
+              !filter.includes('mar')
+            }
+          >
+            {/* TODO: Change label on mobile and desktop */}
+            Design
+            <Input
+              onChange={e => toggleFilter('des', e)}
+              type="checkbox"
+              name="filter-design"
+              value="design"
+            />
+          </Label>
 
-        <label>
-          Developers
-          <input
-            onChange={e => toggleFilter('dev', e)}
-            type="checkbox"
-            name="filter-developers"
-            value="developers"
-          />
-        </label>
+          <Label
+            checked={
+              filter.includes('dev') &&
+              !filter.includes('des') &&
+              !filter.includes('mar')
+            }
+          >
+            {/* TODO: Change label on mobile and desktop */}
+            Developers
+            <Input
+              onChange={e => toggleFilter('dev', e)}
+              type="checkbox"
+              name="filter-developers"
+              value="developers"
+            />
+          </Label>
 
-        <label>
-          Marketers
-          <input
-            onChange={e => toggleFilter('mar', e)}
-            type="checkbox"
-            name="filter-marketers"
-            value="marketers"
-          />
-        </label>
+          <Label
+            checked={
+              filter.includes('mar') &&
+              !filter.includes('dev') &&
+              !filter.includes('des')
+            }
+          >
+            {' '}
+            {/* TODO: Change label on mobile and desktop */}
+            Marketers
+            <Input
+              onChange={e => toggleFilter('mar', e)}
+              type="checkbox"
+              name="filter-marketers"
+              value="marketers"
+            />
+          </Label>
+        </GraduatesLabel>
 
         <ProfileGrid>
           {profiles
@@ -84,13 +114,15 @@ const Home = () => {
                   ].dep.some(f => filter.includes(f))
                 : true,
             )
-            .map(s => (
+            .map((s, i) => (
               <ProfileGridItem
                 key={s.profile.name.split(' ').join('-')}
               >
                 <ProfileCard
                   name={s.profile.name}
                   imgUrl={s.profile.imageurl}
+                  desc={s.profile.summary}
+                  dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
                 />
               </ProfileGridItem>
             ))}
