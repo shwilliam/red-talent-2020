@@ -1,29 +1,67 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Button, SubTitle } from './'
+import { Button } from './'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
   background: #fff;
-  padding: 1rem;
+  color: #000;
+  margin: 1.5rem auto;
+  width: 80%;
 `
 
-const Collapsible = ({ icon = 'blah', dep, children }) => {
+const Header = styled.header`
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  align-items: center;
+  padding-top: 0.5rem;
+  margin: 0 auto;
+`
+
+const StyledButton = styled.button`
+  border: none;
+  background: transparent;
+  font-size: 1.5rem;
+`
+
+const Content = styled.section`
+  padding: 1rem;
+  display: flex;
+  width: 80%;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const Dep = styled.h3`
+  font-size: 0.9rem;
+  font-weight: 100;
+  text-transform: uppercase;
+`
+
+const Collapsible = ({ Icon, dep, children }) => {
   const [toggle, setToggle] = useState(false)
 
   const handleToggle = () => setToggle(!toggle)
 
   return (
     <BorderedContainer>
-      <button onClick={handleToggle}>{toggle ? '+' : '-'}</button>
-      <p>{icon}</p>
-      <SubTitle>{dep}</SubTitle>
-      {toggle ? null : (
-        <>
+      <Header>
+        <Icon />
+        <Dep>{dep}</Dep>
+        <StyledButton onClick={handleToggle}>
+          {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+        </StyledButton>
+      </Header>
+      {toggle ? (
+        <Content>
           {children}
           <Button to='/'>Learn More</Button>
-        </>
-      )}
+        </Content>
+      ) : null}
     </BorderedContainer>
   )
 }
