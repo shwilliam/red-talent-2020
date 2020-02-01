@@ -1,20 +1,19 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const NavCont = styled.nav`
   color: #fff;
   background-color: transparent;
-  font-family: Lato-Regular;
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
   width: 90%;
-  margin: 0 auto;  
+  margin: 0 auto;
 `
 const Logo = styled.a`
-text-decoration: none;
+  text-decoration: none;
 `
 const MenuLinksCont = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -29,39 +28,37 @@ const MenuLinksCont = styled.div`
   bottom: 0;
 `
 const MenuLinks = styled.a`
-  padding:  0.5rem 0;
+  padding: 0.5rem 0;
   font-size: 1.25rem;
   text-decoration: none;
-  font-family: Lato-Regular;
 `
 
 const Hamburger = styled.p`
-    position: absolute;
-    z-index: 2;
-    cursor: pointer;
-    top: 0;
-    right: 10px;
-    color: #000;
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  top: 0;
+  right: 10px;
+  color: #000;
 `
 const Navigation = () => {
-    const [toggle, setToggle] = useState(false)
+  const [toggle, setToggle] = useState(false)
 
-    const handleClick = () => setToggle(!toggle)
-    return (
-        <NavCont>
-            <Logo href='/'>LOGO</Logo>
-            <Hamburger onClick={handleClick}>Menu</Hamburger>
+  const handleClick = () => setToggle(!toggle)
+  return (
+    <NavCont>
+      <Logo href="/">LOGO</Logo>
+      <Hamburger onClick={handleClick}>Menu</Hamburger>
 
-            {toggle ? (
-                <MenuLinksCont>
-                    <MenuLinks href='/'>Graduates</MenuLinks>
-                    <MenuLinks href='/contact'>Contact</MenuLinks>
-                    <MenuLinks href='/'>Event</MenuLinks>
-                </MenuLinksCont>
-            ) : null}
-        </NavCont>
-    )
+      {toggle ? (
+        <MenuLinksCont>
+          <MenuLinks href="/">Graduates</MenuLinks>
+          <MenuLinks href="/contact">Contact</MenuLinks>
+          <MenuLinks href="/">Event</MenuLinks>
+        </MenuLinksCont>
+      ) : null}
+    </NavCont>
+  )
 }
-
 
 export default Navigation
