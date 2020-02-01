@@ -1,24 +1,22 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
 
 const NavCont = styled.nav`
   color: #fff;
   background-color: transparent;
-  font-family: Lato-Regular;
-  display:flex;
-  justify-content:space-between;
+  display: flex;
+  justify-content: space-between;
   width: 90%;
-  margin: 0 auto;  
 
   @media only screen and (min-width: 700px) {
     margin: 1.5rem auto;
   }
 `
 const Logo = styled.a`
-text-decoration: none;
+  text-decoration: none;
 `
 const MenuLinksCont = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -100,6 +98,5 @@ const Navigation = () => {
     </NavCont>
   )
 }
-
 
 export default Navigation

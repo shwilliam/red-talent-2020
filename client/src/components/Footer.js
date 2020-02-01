@@ -5,11 +5,10 @@ const FooterCont = styled.div`
   background: #414042;
   text-decoration: none;
   padding: 0.8rem 2rem;
-  font-family: Lato-Regular;
   text-align: center;
 `
 const Logo = styled.p`
-//   spot for logo img styling
+  //   spot for logo img styling
 `
 const PresentBy = styled.p`
   color: #fff;
@@ -20,12 +19,13 @@ const Link = styled.a`
 `
 
 const Footer = () => (
-    <FooterCont>
-        <Logo>LOGO</Logo>
-        <PresentBy>Event promoted by
-            <Link href='/'> RED Academy</Link>
-        </PresentBy>
-    </FooterCont>
+  <FooterCont>
+    <Logo>LOGO</Logo>
+    <PresentBy>
+      Event promoted by
+      <Link href="/"> RED Academy</Link>
+    </PresentBy>
+  </FooterCont>
 )
 
 export default Footer
