@@ -6,6 +6,8 @@ import Button from './Button'
 import Title from './Title'
 import SubTitle from './Subtitle'
 import Collapsible from './Collapsible'
+import Image from './Image'
+import Banner from './Banner'
 
 export {
   LoadingPage,
@@ -15,5 +17,7 @@ export {
   Button,
   Title,
   SubTitle,
-  Collapsible
+  Collapsible,
+  Image,
+  Banner
 }

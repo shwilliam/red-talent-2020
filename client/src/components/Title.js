@@ -6,6 +6,7 @@ const StyledTitle = styled.h1`
   font-family: Lato-Bold;
   font-size: 1.75rem;
   text-transform: capitalize;
+  text-align: center;
 `
 
 const Title = ({ children }) => <StyledTitle>{children}</StyledTitle>
