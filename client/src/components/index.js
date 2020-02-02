@@ -30,4 +30,4 @@ export {
   Collapsible,
   Image,
   Banner
-}
+};
