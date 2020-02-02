@@ -1,31 +1,38 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const FooterCont = styled.div`
+const StyledFooter = styled.footer`
   background: #414042;
   text-decoration: none;
-  padding: 0.8rem 2rem;
+  padding: 1.5rem 0;
   text-align: center;
 `
-const Logo = styled.p`
-  //   spot for logo img styling
+const Logo = styled.img`
+  width: 150px;
+  height: auto;
+  padding: 1rem 0;
 `
-const PresentBy = styled.p`
+const Copyright = styled.p`
   color: #fff;
-  font-size: 1rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.08rem;
+  font-weight: 100;
+  padding-bottom: 0.5rem;
 `
 const Link = styled.a`
   color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  padding: 0.05rem;
 `
 
 const Footer = () => (
-  <FooterCont>
-    <Logo>LOGO</Logo>
-    <PresentBy>
-      Event promoted by
-      <Link href="/"> RED Academy</Link>
-    </PresentBy>
-  </FooterCont>
+  <StyledFooter>
+    <Logo src='https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg' />
+    <Copyright>
+      Event promoted by <Link href='/'>RED Academy</Link>
+    </Copyright>
+  </StyledFooter>
 )
 
 export default Footer
