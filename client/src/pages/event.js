@@ -1,12 +1,5 @@
 import React from 'react'
-import {
-  Button,
-  // Title,
-  Collapsible,
-  SubTitle,
-  Banner,
-  Image
-} from '../components'
+import { Button, Collapsible, Banner } from '../components'
 import styled from 'styled-components'
 import { FaPoop, FaDev } from 'react-icons/fa'
 import Footer from '../components/Footer'
@@ -20,6 +13,11 @@ const TalentSection = styled.section`
   border-radius: 4px;
   margin-top: 10rem;
   margin-bottom: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    background: transparent;
+    color: #fff;
+  }
 `
 
 const Title = styled.h1`
@@ -32,12 +30,40 @@ const Title = styled.h1`
   padding-bottom: 1.5rem;
   margin: 0 auto;
   color: #5c5c5c;
+
+  @media only screen and (min-width: 768px) {
+    color: #fff;
+    font-size: 1.75rem;
+  }
+`
+
+const WhoWeAreTitle = styled.h1`
+  font-size: 1.35rem;
+  font-family: Lato;
+  font-weight: 600;
+  text-align: center;
+  width: 60%;
+  letter-spacing: 0.05rem;
+  padding-bottom: 1.5rem;
+  margin: 0 auto;
+  color: #5c5c5c;
+
+  @media only screen and (min-width: 768px) {
+    color: #5c5c5c;
+    font-size: 1.75rem;
+    margin-top: 15rem;
+  }
 `
 
 const TalentDate = styled.p`
   padding-bottom: 1.5rem;
   font-size: 0.75rem;
   font-weight: 100;
+
+  @media only screen and (min-width: 768px) {
+    color: #fff;
+    font-size: 1.25rem;
+  }
 `
 
 const Paragraph = styled.p`
@@ -47,6 +73,10 @@ const Paragraph = styled.p`
   line-height: 1.5rem;
   padding: 0.5rem 0;
   margin-top: 0.5rem;
+
+  @media only screen and (min-width: 768px) {
+    width: 800px;
+  }
 `
 
 const DepParagraph = styled.p`
@@ -55,18 +85,31 @@ const DepParagraph = styled.p`
   line-height: 1.5rem;
   padding: 0.5rem 0;
   margin-bottom: 1.5rem;
+  text-align: left;
+
+  @media only screen and (min-width: 768px) {
+    padding: 1rem 0;
+  }
 `
 
 const KeySection = styled.section`
   margin-top: 2rem;
+
+  @media only screen and (min-width: 768px) {
+    margin: 5rem 0;
+  }
 `
 
 const EventSection = styled.section`
   width: 90%;
   margin: 0 auto 1.5rem auto;
+
+  @media only screen and (min-width: 768px) {
+    margin: 5rem auto;
+  }
 `
 
-const EventTitlte = styled.h3`
+const EventTitle = styled.h3`
   padding-top: 1rem;
   font-size: 0.85rem;
   color: #383838;
@@ -85,6 +128,28 @@ const Center = styled.div`
   text-align: center;
 `
 
+const WhoWeAreImg = styled.img`
+  height: 300px;
+  width: 100%;
+
+  @media only screen and (min-width: 768px) {
+    height: 500px;
+    width: auto;
+    margin: 0 auto;
+    display: block;
+  }
+`
+
+const KeyDesktopStyles = styled.section`
+  @media only screen and (min-width: 768px) {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+`
+
 const Event = () => {
   return (
     <main>
@@ -94,11 +159,8 @@ const Event = () => {
         <TalentDate>05 March, 2020</TalentDate>
         <Button to='/contact'>Join Event</Button>
       </TalentSection>
-      <Title>Who Are We?</Title>
-      <Image
-        src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
-        height='40vh'
-      />
+      <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
+      <WhoWeAreImg src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
       <Paragraph>
         RED Academy is a leading-edge design and technology school, with
         programs designed unlike any other. We also produce the professionals of
@@ -114,36 +176,38 @@ const Event = () => {
         find your next great hire at our Talent Connect Event.
       </Paragraph>
       <KeySection>
-        <Title>Our Key Qualificaitons</Title>
-        <Collapsible Icon={FaPoop} dep='UI/UX DESIGN'>
-          <DepParagraph>
-            UI & UX students take a human-centric approach in designing
-            delightful experiences that meet business goals while balancing
-            seamless interactivity and navigation.
-          </DepParagraph>
-        </Collapsible>
-        <Collapsible Icon={FaDev} dep='DEVELOPMENT'>
-          <DepParagraph>
-            Web and App Development students code websites and build web and
-            mobile applications using the most in-demand technologies.
-          </DepParagraph>
-        </Collapsible>
-        <Collapsible Icon={FaPoop} dep='DIGITAL MARKETING'>
-          <DepParagraph>
-            Digital Marketing students create and deploy online strategies, and
-            are versed in today’s core industry skills.
-          </DepParagraph>
-        </Collapsible>
+        <Title style={{ color: '#5c5c5c' }}>Our Key Qualificaitons</Title>
+        <KeyDesktopStyles>
+          <Collapsible Icon={FaPoop} dep='UI/UX DESIGN'>
+            <DepParagraph>
+              UI & UX students take a human-centric approach in designing
+              delightful experiences that meet business goals while balancing
+              seamless interactivity and navigation.
+            </DepParagraph>
+          </Collapsible>
+          <Collapsible Icon={FaDev} dep='DEVELOPMENT'>
+            <DepParagraph>
+              Web and App Development students code websites and build web and
+              mobile applications using the most in-demand technologies.
+            </DepParagraph>
+          </Collapsible>
+          <Collapsible Icon={FaPoop} dep='DIGITAL MARKETING'>
+            <DepParagraph>
+              Digital Marketing students create and deploy online strategies,
+              and are versed in today’s core industry skills.
+            </DepParagraph>
+          </Collapsible>
+        </KeyDesktopStyles>
       </KeySection>
-      <Title>Event Details</Title>
+      <Title style={{ color: '#5c5c5c' }}>Event Details</Title>
       <EventSection>
-        <Image
+        {/* <Image
           heigth='30vh'
           src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
-        />
-        <EventTitlte>Date and Time</EventTitlte>
+        /> */}
+        <EventTitle>Date and Time</EventTitle>
         <EventDesc>05 March, 2020 6PM</EventDesc>
-        <EventTitlte>Location</EventTitlte>
+        <EventTitle>Location</EventTitle>
         <EventDesc>Red Academy</EventDesc>
         <Center>
           <Button to='/contact'>Join Event</Button>
