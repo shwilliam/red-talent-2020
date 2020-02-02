@@ -7,8 +7,9 @@ const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
   background: #fff;
   color: #000;
-  margin: 1.5rem auto;
-  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  width: 90%;
 `
 
 const Header = styled.header`
@@ -30,7 +31,7 @@ const Content = styled.section`
   padding: 1rem;
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
