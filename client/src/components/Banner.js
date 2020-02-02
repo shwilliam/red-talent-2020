@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+const isMobile = window.innerWidth <= 768
+
 const StyledImg = styled.img`
   position: absolute;
   object-fit: cover;
@@ -12,8 +14,11 @@ const StyledImg = styled.img`
   z-index: -1;
 `
 
-const Banner = ({ image, height = '30vh' }) => (
-  <StyledImg src={image} style={{ height }} />
+const Banner = ({ image, height = 30 }) => (
+  <StyledImg
+    src={image}
+    style={isMobile ? { height: `${height}vh` } : { height: `${height * 2}vh` }}
+  />
 )
 
 export default Banner
