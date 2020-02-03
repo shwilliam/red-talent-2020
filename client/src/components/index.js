@@ -13,6 +13,7 @@ import Input from './Input'
 import GraduatesLabel from './GraduatesLabel'
 import Label from './Label'
 import Paragraph from './Paragraph'
+import Navigation from './Navigation'
 
 export {
   Header,
@@ -29,5 +30,6 @@ export {
   SubTitle,
   Collapsible,
   Image,
-  Banner
+  Banner,
+  Navigation
 }
