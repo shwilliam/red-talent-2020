@@ -35,7 +35,8 @@ const RedBanner = styled.div`
   position: absolute;
   top: 0;
   left: 0;
-  width: 27rem;
+  min-width: 20rem;
+  max-width: 27rem;
 `
 
 const GraduatesContainer = styled.main`

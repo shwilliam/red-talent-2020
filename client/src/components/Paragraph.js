@@ -9,6 +9,7 @@ const StyledP = styled.p`
 
   @media only screen and (min-width: 700px) {
     color: #fff;
+    margin-bottom: 30px;
   }
 `
 
