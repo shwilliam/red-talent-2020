@@ -63,7 +63,9 @@ const ModalImg = styled.img`
   max-height: 400px;
   width: 100%;
   max-width: 300px;
-  object-fit: contain;
+  object-fit: cover;
+  border-radius: 3px;
+  box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.33);
 
   @media only screen and (min-width: 800px) {
     position: sticky;
