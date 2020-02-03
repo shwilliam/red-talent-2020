@@ -7,8 +7,13 @@ const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
   background: #fff;
   color: #000;
-  margin: 1.5rem auto;
-  width: 80%;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  width: 90%;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `
 
 const Header = styled.header`
@@ -30,7 +35,7 @@ const Content = styled.section`
   padding: 1rem;
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 1rem auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -40,6 +45,25 @@ const Dep = styled.h3`
   font-size: 0.9rem;
   font-weight: 100;
   text-transform: uppercase;
+
+  @media only screen and (min-width: 768px) {
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+    padding: 1rem 0;
+    color: #383838;
+  }
+`
+
+const DesktopContainer = styled.section`
+  width: 400px;
+`
+
+const DesktopContent = styled.section`
+  @media only screen and (max-width: 768px) {
+    display: none;
+  }
+  text-align: center;
 `
 
 const Collapsible = ({ Icon, dep, children }) => {
@@ -48,21 +72,32 @@ const Collapsible = ({ Icon, dep, children }) => {
   const handleToggle = () => setToggle(!toggle)
 
   return (
-    <BorderedContainer>
-      <Header>
-        <Icon />
-        <Dep>{dep}</Dep>
-        <StyledButton onClick={handleToggle}>
-          {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
-        </StyledButton>
-      </Header>
-      {toggle ? (
-        <Content>
+    <>
+      <BorderedContainer>
+        <Header>
+          <Icon />
+          <Dep>{dep}</Dep>
+          <StyledButton onClick={handleToggle}>
+            {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
+          </StyledButton>
+        </Header>
+        {toggle ? (
+          <Content>
+            {children}
+            <Button to='/'>Learn More</Button>
+          </Content>
+        ) : null}
+      </BorderedContainer>
+
+      <DesktopContainer>
+        <DesktopContent>
+          <Icon />
+          <Dep>{dep}</Dep>
           {children}
           <Button to='/'>Learn More</Button>
-        </Content>
-      ) : null}
-    </BorderedContainer>
+        </DesktopContent>
+      </DesktopContainer>
+    </>
   )
 }
 
