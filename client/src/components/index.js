@@ -14,6 +14,7 @@ import SubTitle from './Subtitle'
 import Collapsible from './Collapsible'
 import Image from './Image'
 import Banner from './Banner'
+import Navigation from './Navigation'
 import TextButton from './TextButton'
 
 export {
@@ -33,5 +34,6 @@ export {
   Collapsible,
   Image,
   Banner,
+  Navigation
   TextButton,
 }

@@ -1,21 +1,47 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { GiHamburgerMenu } from 'react-icons/gi'
 
-const NavCont = styled.nav`
+const NavBar = styled.nav`
   color: #fff;
   background-color: transparent;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
 
   @media only screen and (min-width: 700px) {
-    margin: 1.5rem auto;
+    background: #fff;
+    margin: 0 auto;
+    width: 100%;
   }
 `
-const Logo = styled.a`
-  text-decoration: none;
+
+const Container = styled.div`
+  @media only screen and (min-width: 768px) {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 `
-const MenuLinksCont = styled.div`
+const Link = styled.a`
+  text-decoration: none;
+  margin-left: 0.5rem;
+`
+
+const Logo = styled.img`
+  width: 150px;
+  height: auto;
+  padding: 1rem 0;
+
+  @media only screen and (min-width: 768px) {
+    filter: invert(1);
+  }
+`
+
+const MenuLinkContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,38 +60,41 @@ const MenuLinksCont = styled.div`
     display: none;
   }
 `
-const MenuLinks = styled.a`
-  color: #000;
-  padding:  0.5rem 0;
-  font-size: 1.25rem;
+const MenuLink = styled.a`
+  color: #1b1a1a;
+  padding: 0.75rem 0;
+  font-size: 1.1rem;
   text-decoration: none;
-  font-family: Lato-Regular;
+  font-family: Lato;
 
-  @media only screen and (min-width: 700px) {
-    margin: 0 2rem;
-    &:last-child {
-      margin-right: 0;
-    }
+  &:hover {
+    color: #333;
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding-right: 1.75rem;
+    font-size: 1rem;
   }
 `
 
-const Hamburger = styled.p`
+const HamburgerMenu = styled.p`
   position: absolute;
   z-index: 2;
   cursor: pointer;
-  top: 0;
+  top: 15px;
   right: 10px;
-  color: #000;
+  color: #fff;
+  font-size: 1.1rem;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: none;
   }
 `
 
-const DesktopNav = styled.div`
+const DesktopNavBar = styled.div`
   display: none;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: block;
   }
 `
@@ -76,26 +105,30 @@ const Navigation = () => {
   const handleClick = () => setToggle(!toggle)
 
   return (
-    <NavCont>
+    <NavBar>
+      <Container>
+        <Link href='/'>
+          <Logo src='https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg' />
+        </Link>
+        <HamburgerMenu onClick={handleClick}>
+          <GiHamburgerMenu />
+        </HamburgerMenu>
 
-      <Logo href='/'>LOGO</Logo>
-      <Hamburger onClick={handleClick}>Menu</Hamburger>
+        {toggle ? (
+          <MenuLinkContainer>
+            <MenuLink href='/'>Graduates</MenuLink>
+            <MenuLink href='/contact'>Contact</MenuLink>
+            <MenuLink href='/event'>Event</MenuLink>
+          </MenuLinkContainer>
+        ) : null}
 
-      {toggle ? (
-        <MenuLinksCont>
-          <MenuLinks href='/'>Graduates</MenuLinks>
-          <MenuLinks href='/contact'>Contact</MenuLinks>
-          <MenuLinks href='/'>Event</MenuLinks>
-        </MenuLinksCont>
-      ) : null}
-
-      <DesktopNav>
-        <MenuLinks href='/'>Graduates</MenuLinks>
-        <MenuLinks href='/contact'>Contact</MenuLinks>
-        <MenuLinks href='/'>Event</MenuLinks>
-      </DesktopNav>
-
-    </NavCont>
+        <DesktopNavBar>
+          <MenuLink href='/'>Graduates</MenuLink>
+          <MenuLink href='/contact'>Contact</MenuLink>
+          <MenuLink href='/event'>Event</MenuLink>
+        </DesktopNavBar>
+      </Container>
+    </NavBar>
   )
 }
 

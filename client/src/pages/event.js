@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Collapsible, Banner } from '../components'
+import { Button, Collapsible, Banner, Navigation } from '../components'
 import styled from 'styled-components'
 import { FaPoop, FaDev } from 'react-icons/fa'
 import Footer from '../components/Footer'
@@ -11,12 +11,13 @@ const TalentSection = styled.section`
   text-align: center;
   padding: 2rem;
   border-radius: 4px;
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-bottom: 2rem;
 
   @media only screen and (min-width: 768px) {
     background: transparent;
     color: #fff;
+    margin-top: 10rem;
   }
 `
 
@@ -106,6 +107,10 @@ const EventSection = styled.section`
 
   @media only screen and (min-width: 768px) {
     margin: 5rem auto;
+    display: flex;
+    justify-content: flex-start;
+    max-height: 350px;
+    width: 70%;
   }
 `
 
@@ -113,6 +118,11 @@ const EventTitle = styled.h3`
   padding-top: 1rem;
   font-size: 0.85rem;
   color: #383838;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.25rem;
+    margin-top: 0.5rem;
+  }
 `
 
 const EventDesc = styled.p`
@@ -120,6 +130,10 @@ const EventDesc = styled.p`
   font-size: 1rem;
   color: #383838;
   font-weight: 600;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1.5rem;
+  }
 `
 
 const Center = styled.div`
@@ -150,9 +164,50 @@ const KeyDesktopStyles = styled.section`
   }
 `
 
+const EventImg = styled.img`
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+
+  @media only screen and (min-width: 768px) {
+    flex-basis: 50%;
+    margin: unset;
+  }
+`
+
+const EventDetails = styled.section`
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 50%;
+    border: 0.3px solid #979797;
+  }
+`
+
+const EventImgContainer = styled.section`
+  color: #fff;
+  position: relative;
+`
+
+const EventImgText = styled.p`
+  @media only screen and (min-width: 768px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.75rem;
+    text-align: center;
+    background: rgba(208, 56, 43, 0.8);
+    font-size: 2rem;
+  }
+`
+
 const Event = () => {
   return (
     <main>
+      <Navigation />
       <Banner image='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
@@ -201,18 +256,20 @@ const Event = () => {
       </KeySection>
       <Title style={{ color: '#5c5c5c' }}>Event Details</Title>
       <EventSection>
-        {/* <Image
-          heigth='30vh'
-          src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg'
-        /> */}
-        <EventTitle>Date and Time</EventTitle>
-        <EventDesc>05 March, 2020 6PM</EventDesc>
-        <EventTitle>Location</EventTitle>
-        <EventDesc>Red Academy</EventDesc>
-        <Center>
-          <Button to='/contact'>Join Event</Button>
-        </Center>
+        <EventImgContainer>
+          <EventImg src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
+          <EventImgText>RED Academy Talent Connect</EventImgText>
+        </EventImgContainer>
+        <EventDetails>
+          <EventTitle>Date and Time</EventTitle>
+          <EventDesc>05 March, 2020 6PM</EventDesc>
+          <EventTitle>Location</EventTitle>
+          <EventDesc>Red Academy</EventDesc>
+        </EventDetails>
       </EventSection>
+      <Center style={{ 'margin-bottom': '5rem' }}>
+        <Button to='/contact'>Join Event</Button>
+      </Center>
       <Footer />
     </main>
   )
