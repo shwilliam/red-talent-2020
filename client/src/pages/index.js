@@ -12,8 +12,36 @@ import {
   Header,
 } from '../components'
 import {LINKEDIN_IDS} from '../../data'
+import Footer from '../components/Footer'
+import styled from 'styled-components'
+const isDesktop = window.innerWidth >= 700
 
 // GRADUATES PAGE
+
+const GraduatesBaner = styled.img`
+  width: 100%;
+  object-fit: cover;
+  height: 12rem;
+  z-index: -99;
+
+  @media only screen and (min-width: 700px) {
+    height: 30rem;
+  }
+`
+
+const RedBanner = styled.div`
+  height: 30rem;
+  background-color: #b84334;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 20rem;
+  max-width: 27rem;
+`
+
+const GraduatesContainer = styled.main`
+  margin-bottom: 30px;
+`
 
 const Home = () => {
   const {profiles} = useRouteData()
@@ -37,6 +65,8 @@ const Home = () => {
 
   return (
     <>
+      {isDesktop ? <RedBanner /> : null}
+      <GraduatesBaner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
       <Header>
         <Title>Graduates</Title>
 
@@ -50,7 +80,7 @@ const Home = () => {
         </Paragraph>
       </Header>
 
-      <main>
+      <GraduatesContainer>
         <GraduatesLabel>
           <Label
             checked={
@@ -127,15 +157,9 @@ const Home = () => {
               </ProfileGridItem>
             ))}
         </ProfileGrid>
-      </main>
+      </GraduatesContainer>
 
-      <footer>
-        <p>LOGO</p>
-        <p>
-          Event promoted by{' '}
-          <a href="https://redacademy.com/">RED Academy</a>
-        </p>
-      </footer>
+      <Footer />
     </>
   )
 }
