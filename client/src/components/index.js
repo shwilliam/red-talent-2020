@@ -34,6 +34,6 @@ export {
   Collapsible,
   Image,
   Banner,
-  Navigation
+  Navigation,
   TextButton,
 }
