@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useRouteData } from "react-static";
+import React, {useState} from 'react'
+import {useRouteData} from 'react-static'
 import {
   ProfileGrid,
   ProfileGridItem,
@@ -9,44 +9,55 @@ import {
   Label,
   GraduatesLabel,
   Paragraph,
-  Header
-} from "../components";
-import { LINKEDIN_IDS } from "../../data";
-import Footer from "../components/Footer";
+  Header,
+  Banner,
+} from '../components'
+import {LINKEDIN_IDS} from '../../data'
+import Footer from '../components/Footer'
 
 // GRADUATES PAGE
 
 const Home = () => {
-  const { profiles } = useRouteData();
-  console.log(profiles);
-  const [filter, setFilter] = useState(["dev"]);
+  const {profiles} = useRouteData()
+  console.log(profiles)
+  const [filter, setFilter] = useState(['dev'])
 
-  console.log(profiles);
-  console.log("f", filter);
+  console.log(profiles)
+  console.log('f', filter)
 
   const toggleFilter = (dep, e) => {
-    const idx = filter.indexOf(dep);
-    const filterCopy = [...filter];
+    const idx = filter.indexOf(dep)
+    const filterCopy = [...filter]
 
     if (e.target.checked || idx === -1) {
-      filterCopy.push(dep) && filterCopy.splice(0, 1);
+      filterCopy.push(dep) && filterCopy.splice(0, 1)
     } else {
-      filterCopy.splice(idx, 1);
+      filterCopy.splice(idx, 1)
     }
-    setFilter(filterCopy);
-  };
+    setFilter(filterCopy)
+  }
 
   return (
     <>
+      <img
+        style={{
+          width: '100%',
+          objectFit: 'cover',
+          height: '12rem',
+          zIndex: -99,
+        }}
+        src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg"
+      />
       <Header>
         <Title>Graduates</Title>
 
         <Paragraph>
-          Meet the talents you'll connect with at Red Academy's event! Our
-          Recent graduates have all worked with real clients, learned today's
-          core digital skills and become industry-ready professionals. Their
-          Knowledge, passion and innovation will help you move your business to
-          the next level!
+          Meet the talents you'll connect with at Red Academy's event!
+          Our Recent graduates have all worked with real clients,
+          learned today's core digital skills and become
+          industry-ready professionals. Their Knowledge, passion and
+          innovation will help you move your business to the next
+          level!
         </Paragraph>
       </Header>
 
@@ -54,15 +65,15 @@ const Home = () => {
         <GraduatesLabel>
           <Label
             checked={
-              filter.includes("des") &&
-              !filter.includes("dev") &&
-              !filter.includes("mar")
+              filter.includes('des') &&
+              !filter.includes('dev') &&
+              !filter.includes('mar')
             }
           >
             {/* TODO: Change label on mobile and desktop */}
             Design
             <Input
-              onChange={e => toggleFilter("des", e)}
+              onChange={e => toggleFilter('des', e)}
               type="checkbox"
               name="filter-design"
               value="design"
@@ -71,15 +82,15 @@ const Home = () => {
 
           <Label
             checked={
-              filter.includes("dev") &&
-              !filter.includes("des") &&
-              !filter.includes("mar")
+              filter.includes('dev') &&
+              !filter.includes('des') &&
+              !filter.includes('mar')
             }
           >
             {/* TODO: Change label on mobile and desktop */}
             Developers
             <Input
-              onChange={e => toggleFilter("dev", e)}
+              onChange={e => toggleFilter('dev', e)}
               type="checkbox"
               name="filter-developers"
               value="developers"
@@ -88,16 +99,16 @@ const Home = () => {
 
           <Label
             checked={
-              filter.includes("mar") &&
-              !filter.includes("dev") &&
-              !filter.includes("des")
+              filter.includes('mar') &&
+              !filter.includes('dev') &&
+              !filter.includes('des')
             }
           >
-            {" "}
+            {' '}
             {/* TODO: Change label on mobile and desktop */}
             Marketers
             <Input
-              onChange={e => toggleFilter("mar", e)}
+              onChange={e => toggleFilter('mar', e)}
               type="checkbox"
               name="filter-marketers"
               value="marketers"
@@ -109,13 +120,15 @@ const Home = () => {
           {profiles
             .filter((_, i) =>
               filter && filter.length
-                ? LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep.some(f =>
-                    filter.includes(f)
-                  )
-                : true
+                ? LINKEDIN_IDS[
+                    Object.keys(LINKEDIN_IDS)[i]
+                  ].dep.some(f => filter.includes(f))
+                : true,
             )
             .map((s, i) => (
-              <ProfileGridItem key={s.profile.name.split(" ").join("-")}>
+              <ProfileGridItem
+                key={s.profile.name.split(' ').join('-')}
+              >
                 <ProfileCard
                   name={s.profile.name}
                   imgUrl={s.profile.imageurl}
@@ -129,7 +142,7 @@ const Home = () => {
 
       <Footer />
     </>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home
