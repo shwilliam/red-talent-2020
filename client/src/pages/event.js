@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Collapsible, Banner } from '../components'
+import { Button, Collapsible, Banner, Navigation } from '../components'
 import styled from 'styled-components'
 import { FaPoop, FaDev } from 'react-icons/fa'
 import Footer from '../components/Footer'
@@ -11,12 +11,13 @@ const TalentSection = styled.section`
   text-align: center;
   padding: 2rem;
   border-radius: 4px;
-  margin-top: 10rem;
+  margin-top: 6rem;
   margin-bottom: 2rem;
 
   @media only screen and (min-width: 768px) {
     background: transparent;
     color: #fff;
+    margin-top: 10rem;
   }
 `
 
@@ -206,6 +207,7 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
+      <Navigation />
       <Banner image='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
@@ -265,7 +267,7 @@ const Event = () => {
           <EventDesc>Red Academy</EventDesc>
         </EventDetails>
       </EventSection>
-      <Center>
+      <Center style={{ 'margin-bottom': '5rem' }}>
         <Button to='/contact'>Join Event</Button>
       </Center>
       <Footer />
