@@ -6,6 +6,10 @@ const StyledP = styled.p`
   line-height: 1.5;
   color: #5c5c5c;
   text-align: left;
+
+  @media only screen and (min-width: 700px) {
+    color: #fff;
+  }
 `
 
 const Paragraph = ({children}) => <StyledP>{children}</StyledP>

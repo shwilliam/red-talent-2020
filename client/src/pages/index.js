@@ -14,7 +14,7 @@ import {
 import {LINKEDIN_IDS} from '../../data'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
-const isMobile = window.innerWidth <= 768
+const isDesktop = window.innerWidth >= 700
 
 // GRADUATES PAGE
 
@@ -25,8 +25,17 @@ const GraduatesBaner = styled.img`
   z-index: -99;
 
   @media only screen and (min-width: 700px) {
-    height: 25rem;
+    height: 30rem;
   }
+`
+
+const RedBanner = styled.div`
+  height: 30rem;
+  background-color: #b84334;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 27rem;
 `
 
 const GraduatesContainer = styled.main`
@@ -55,6 +64,7 @@ const Home = () => {
 
   return (
     <>
+      {isDesktop ? <RedBanner /> : null}
       <GraduatesBaner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
       <Header>
         <Title>Graduates</Title>

@@ -7,6 +7,11 @@ const StyledTitle = styled.h1`
   font-size: 1.17rem;
   text-transform: capitalize;
   text-align: center;
+
+  @media only screen and (min-width: 700px) {
+    color: #fff;
+    font-size: 2rem;
+  }
 `
 
 const Title = ({children}) => <StyledTitle>{children}</StyledTitle>

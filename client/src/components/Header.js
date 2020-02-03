@@ -6,8 +6,13 @@ const StyledHeader = styled.header`
   text-align: center;
 
   @media only screen and (min-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     position: absolute;
-    top: 20%;
+    top: 30%;
+    left: 5%;
+    width: 45%;
   }
 `
 
