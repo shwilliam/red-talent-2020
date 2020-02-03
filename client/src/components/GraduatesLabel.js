@@ -1,17 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledDiv = styled.div`
   text-align: center;
   display: flex;
   justify-content: center;
-  padding: 15px 0;
+  padding: 25px 0;
 
   @media only screen and (min-width: 700px) {
     padding: 30px 0 50px 0;
   }
-`;
+`
 
-const GraduatesLabel = ({ children }) => <StyledDiv>{children}</StyledDiv>;
+const GraduatesLabel = ({children}) => (
+  <StyledDiv>{children}</StyledDiv>
+)
 
-export default GraduatesLabel;
+export default GraduatesLabel

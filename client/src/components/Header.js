@@ -1,11 +1,22 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  margin: 0 15px;
+  margin: 35px 15px 5px 15px;
   text-align: center;
-`;
 
-const Header = ({ children }) => <StyledHeader>{children}</StyledHeader>;
+  @media only screen and (min-width: 700px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    min-width: 30rem;
+    width: 45%;
+  }
+`
 
-export default Header;
+const Header = ({children}) => <StyledHeader>{children}</StyledHeader>
+
+export default Header
