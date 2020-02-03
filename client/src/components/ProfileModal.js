@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import {Modal, useModal} from 'react-modal-wrap'
+import {IoIosArrowBack} from 'react-icons/io'
 
 const BigTextButton = styled.button`
   display: flex;
@@ -136,7 +137,9 @@ const ProfileModal = ({name, imgURL, dep, desc}) => {
         <ModalContainer>
           <ModalContent>
             <ModalHeader>
-              <BigTextButton onClick={close}>❮</BigTextButton>
+              <BigTextButton onClick={close}>
+                <IoIosArrowBack />
+              </BigTextButton>
             </ModalHeader>
 
             <ModalLayout>
