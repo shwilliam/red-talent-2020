@@ -10,12 +10,16 @@ import {
   GraduatesLabel,
   Paragraph,
   Header,
-  Banner,
 } from '../components'
 import {LINKEDIN_IDS} from '../../data'
 import Footer from '../components/Footer'
+import styled from 'styled-components'
 
 // GRADUATES PAGE
+
+const GraduatesContainer = styled.main`
+  margin-bottom: 30px;
+`
 
 const Home = () => {
   const {profiles} = useRouteData()
@@ -61,7 +65,7 @@ const Home = () => {
         </Paragraph>
       </Header>
 
-      <main>
+      <GraduatesContainer>
         <GraduatesLabel>
           <Label
             checked={
@@ -138,7 +142,7 @@ const Home = () => {
               </ProfileGridItem>
             ))}
         </ProfileGrid>
-      </main>
+      </GraduatesContainer>
 
       <Footer />
     </>
