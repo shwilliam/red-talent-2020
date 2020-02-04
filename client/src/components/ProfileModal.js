@@ -134,7 +134,12 @@ const ProfileModal = ({name, imgURL, dep, desc}) => {
 
   return (
     <>
-      {isOpen && <ModalOverlay onClick={close} />}
+      {isOpen && (
+        <ModalOverlay
+          onClick={close}
+          style={{height: `calc(${window.scrollY}px + 100%`}}
+        />
+      )}
       <Modal overlay>
         <ModalContainer>
           <ModalContent>
