@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {useRouteData} from 'react-static'
 import {
+  Navigation,
   ProfileGrid,
   ProfileGridItem,
   ProfileCard,
@@ -32,7 +33,7 @@ const RedBanner = styled.div`
   height: 30rem;
   background-color: #b84334;
   position: absolute;
-  top: 0;
+  top: 61.35px;
   left: 0;
   min-width: 20rem;
   max-width: 27rem;
@@ -69,6 +70,7 @@ const Home = () => {
 
   return (
     <>
+      <Navigation />
       <RedBanner />
       <GraduatesBanner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
       <Header>
