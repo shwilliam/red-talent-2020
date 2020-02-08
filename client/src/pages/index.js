@@ -50,21 +50,18 @@ const GraduatesContainer = styled.main`
 
 const Home = () => {
   const {profiles} = useRouteData()
-  console.log(profiles)
   const [filter, setFilter] = useState(['dev'])
 
-  console.log(profiles)
-  console.log('f', filter)
-
-  const toggleFilter = (dep, e) => {
+  const toggleFilter = (dep) => {
     const idx = filter.indexOf(dep)
     const filterCopy = [...filter]
 
-    if (e.target.checked || idx === -1) {
-      filterCopy.push(dep) && filterCopy.splice(0, 1)
-    } else {
+    if (idx === -1) {
+      filterCopy.push(dep)
+    } else if (filterCopy.length > 1) {
       filterCopy.splice(idx, 1)
     }
+
     setFilter(filterCopy)
   }
 
@@ -89,11 +86,7 @@ const Home = () => {
       <GraduatesContainer>
         <GraduatesLabel>
           <Label
-            checked={
-              filter.includes('des') &&
-              !filter.includes('dev') &&
-              !filter.includes('mar')
-            }
+            checked={filter.includes('des')}
           >
             {/* TODO: Change label on mobile and desktop */}
             Design
@@ -106,11 +99,7 @@ const Home = () => {
           </Label>
 
           <Label
-            checked={
-              filter.includes('dev') &&
-              !filter.includes('des') &&
-              !filter.includes('mar')
-            }
+            checked={filter.includes('dev')}
           >
             {/* TODO: Change label on mobile and desktop */}
             Developers
@@ -123,11 +112,7 @@ const Home = () => {
           </Label>
 
           <Label
-            checked={
-              filter.includes('mar') &&
-              !filter.includes('dev') &&
-              !filter.includes('des')
-            }
+            checked={filter.includes('mar')}
           >
             {' '}
             {/* TODO: Change label on mobile and desktop */}
