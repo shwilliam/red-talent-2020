@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
+import {ModalWrapper, Modal, useModal} from 'react-modal-wrap'
 import styled from 'styled-components'
-import { GiHamburgerMenu } from 'react-icons/gi'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {IoIosArrowBack} from 'react-icons/io'
 
 const NavBar = styled.nav`
   color: #fff;
@@ -99,10 +101,49 @@ const DesktopNavBar = styled.div`
   }
 `
 
-const Navigation = () => {
-  const [toggle, setToggle] = useState(false)
+const BigTextButton = styled.button`
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: none;
+  font: inherit;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 1rem 1rem 1rem 0;
 
-  const handleClick = () => setToggle(!toggle)
+  @media only screen and (min-width: 400px) {
+    padding: 1rem;
+  }
+`
+
+const ModalHeader = styled.div`
+  position: sticky;
+  top: 0;
+  z-index: 999;
+`
+
+const NavigationModal = () => {
+  const {close} = useModal()
+
+  return (
+    <Modal overlay>
+      <ModalHeader>
+        <BigTextButton onClick={close}>
+          <IoIosArrowBack />
+        </BigTextButton>
+      </ModalHeader>
+
+      <MenuLinkContainer>
+        <MenuLink href='/'>Graduates</MenuLink>
+        <MenuLink href='/contact'>Contact</MenuLink>
+        <MenuLink href='/event'>Event</MenuLink>
+      </MenuLinkContainer>
+    </Modal>
+  );
+};
+
+const Navigation = () => {
+  const {isOpen, open} = useModal()
 
   return (
     <NavBar>
@@ -110,17 +151,12 @@ const Navigation = () => {
         <Link href='/'>
           <Logo src='https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg' />
         </Link>
-        <HamburgerMenu onClick={handleClick}>
+
+        <HamburgerMenu onClick={open}>
           <GiHamburgerMenu />
         </HamburgerMenu>
 
-        {toggle ? (
-          <MenuLinkContainer>
-            <MenuLink href='/'>Graduates</MenuLink>
-            <MenuLink href='/contact'>Contact</MenuLink>
-            <MenuLink href='/event'>Event</MenuLink>
-          </MenuLinkContainer>
-        ) : null}
+        {isOpen && <NavigationModal />}
 
         <DesktopNavBar>
           <MenuLink href='/'>Graduates</MenuLink>
@@ -132,4 +168,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default () => (<ModalWrapper><Navigation /></ModalWrapper>);
