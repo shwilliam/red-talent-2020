@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const isMobile = window.innerWidth <= 768
+const isMobile = (typeof window !== 'undefined' ? window.innerWidth <= 768 : true)
 
 const StyledImg = styled.img`
   position: absolute;
