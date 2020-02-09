@@ -17,9 +17,16 @@ const CheckedLabel = styled.label`
     width: 250px;
     height: 30px;
     margin: 0;
-    border-radius: 3px;
     border: 2px solid #d0382b;
     letter-spacing: 0.81px;
+  }
+
+  &:first-of-type {
+    border-radius: 3px 0 0 3px;
+  }
+
+  &:last-of-type {
+    border-radius: 0 3px 3px 0;
   }
 `
 const UnCheckedLabel = styled.label`
@@ -38,10 +45,19 @@ const UnCheckedLabel = styled.label`
     width: 250px;
     height: 30px;
     margin: 0;
-    border-radius: 3px;
     border: 2px solid #eed7d5;
     color: #9e9b9b;
     letter-spacing: 0.81px;
+  }
+
+  &:first-of-type {
+    border-radius: 3px 0 0 3px;
+    border-right: none;
+  }
+
+  &:last-of-type {
+    border-radius: 0 3px 3px 0;
+    border-left: none;
   }
 `
 
