@@ -3,6 +3,9 @@ import {Button, Collapsible, Banner, Navigation} from '../components'
 import styled from 'styled-components'
 import {FaPoop, FaDev} from 'react-icons/fa'
 import Footer from '../components/Footer'
+import ReactGA from 'react-ga'
+
+if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 
 const TalentSection = styled.section`
   width: 90%;

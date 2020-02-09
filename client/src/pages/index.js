@@ -15,6 +15,9 @@ import {
 import {LINKEDIN_IDS} from '../../data'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
+
+if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 
 // GRADUATES PAGE
 

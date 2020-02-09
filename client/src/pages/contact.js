@@ -1,5 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
+import ReactGA from 'react-ga'
+
+if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 
 const ContactPage = styled.main`
   --spacing-v: 1.25rem;
