@@ -1,7 +1,9 @@
 import React from 'react'
-import {Button, Collapsible, Banner, Navigation} from '../components'
+import { Button, Collapsible, Banner, Navigation } from '../components'
 import styled from 'styled-components'
-import {FaPoop, FaDev} from 'react-icons/fa'
+import devLogo from '../../assets/images/dev.svg'
+import dmLogo from '../../assets/images/dm.svg'
+import uxuiLogo from '../../assets/images/ux_ui.svg'
 import Footer from '../components/Footer'
 import ReactGA from 'react-ga'
 
@@ -211,62 +213,56 @@ const Event = () => {
   return (
     <main>
       <Navigation />
-      <Banner image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+      <Banner image='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
-        <Button to="/contact">Join Event</Button>
+        <Button to='/contact'>Join Event</Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
-      <WhoWeAreImg src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+      <WhoWeAreImg src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
       <Paragraph>
-        RED Academy is a leading-edge design and technology school,
-        with programs designed unlike any other. We also produce the
-        professionals of tomorrow unlike any other.
+        RED Academy is a leading-edge design and technology school, with
+        programs designed unlike any other. We also produce the professionals of
+        tomorrow unlike any other.
       </Paragraph>
       <Paragraph>
         With the real workplace in mind, staying up to date with the
         ever-growing tech industry.
       </Paragraph>
       <Paragraph>
-        Whether you are a start-up looking for a new member for your
-        great idea, or an established company looking to grow your
-        team, you are sure to find your next great hire at our Talent
-        Connect Event.
+        Whether you are a start-up looking for a new member for your great idea,
+        or an established company looking to grow your team, you are sure to
+        find your next great hire at our Talent Connect Event.
       </Paragraph>
       <KeySection>
-        <Title style={{color: '#5c5c5c'}}>
-          Our Key Qualifications
-        </Title>
+        <Title style={{ color: '#5c5c5c' }}>Our Key Qualifications</Title>
         <KeyDesktopStyles>
-          <Collapsible Icon={FaPoop} dep="UI/UX DESIGN">
+          <Collapsible icon={uxuiLogo} dep='UI/UX DESIGN'>
             <DepParagraph>
-              UI & UX students take a human-centric approach in
-              designing delightful experiences that meet business
-              goals while balancing seamless interactivity and
-              navigation.
+              UI & UX students take a human-centric approach in designing
+              delightful experiences that meet business goals while balancing
+              seamless interactivity and navigation.
             </DepParagraph>
           </Collapsible>
-          <Collapsible Icon={FaDev} dep="DEVELOPMENT">
+          <Collapsible icon={devLogo} dep='DEVELOPMENT'>
             <DepParagraph>
-              Web and App Development students code websites and build
-              web and mobile applications using the most in-demand
-              technologies.
+              Web and App Development students code websites and build web and
+              mobile applications using the most in-demand technologies.
             </DepParagraph>
           </Collapsible>
-          <Collapsible Icon={FaPoop} dep="DIGITAL MARKETING">
+          <Collapsible icon={dmLogo} dep='DIGITAL MARKETING'>
             <DepParagraph>
-              Digital Marketing students create and deploy online
-              strategies, and are versed in today’s core industry
-              skills.
+              Digital Marketing students create and deploy online strategies,
+              and are versed in today’s core industry skills.
             </DepParagraph>
           </Collapsible>
         </KeyDesktopStyles>
       </KeySection>
-      <Title style={{color: '#5c5c5c'}}>Event Details</Title>
+      <Title style={{ color: '#5c5c5c' }}>Event Details</Title>
       <EventSection>
         <EventImgContainer>
-          <EventImg src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+          <EventImg src='https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg' />
           <EventImgText>RED Academy Talent Connect</EventImgText>
         </EventImgContainer>
         <EventDetails>
@@ -276,8 +272,8 @@ const Event = () => {
           <EventDesc>Red Academy</EventDesc>
         </EventDetails>
       </EventSection>
-      <Center style={{'margin-bottom': '5rem'}}>
-        <Button to="/contact">Join Event</Button>
+      <Center style={{ marginBottom: '5rem' }}>
+        <Button to='/contact'>Join Event</Button>
       </Center>
       <Footer />
     </main>
