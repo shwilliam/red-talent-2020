@@ -1,8 +1,12 @@
 import React from 'react'
-import {ModalWrapper, Modal, useModal} from 'react-modal-wrap'
+import { ModalWrapper, Modal, useModal } from 'react-modal-wrap'
 import styled from 'styled-components'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {IoIosArrowBack} from 'react-icons/io'
+import { GiHamburgerMenu } from 'react-icons/gi'
+import { IoIosArrowBack } from 'react-icons/io'
+import logo from '../../assets/images/logo.svg'
+import mobileLogo from '../../assets/images/logo_mobile.svg'
+
+const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : true
 
 const NavBar = styled.nav`
   color: #fff;
@@ -34,13 +38,9 @@ const Link = styled.a`
 `
 
 const Logo = styled.img`
-  width: 150px;
+  width: 160px;
   height: auto;
   padding: 1rem 0;
-
-  @media only screen and (min-width: 768px) {
-    filter: invert(1);
-  }
 `
 
 const MenuLinkContainer = styled.div`
@@ -123,7 +123,7 @@ const ModalHeader = styled.div`
 `
 
 const NavigationModal = () => {
-  const {close} = useModal()
+  const { close } = useModal()
 
   return (
     <Modal overlay>
@@ -139,17 +139,17 @@ const NavigationModal = () => {
         <MenuLink href='/event'>Event</MenuLink>
       </MenuLinkContainer>
     </Modal>
-  );
-};
+  )
+}
 
 const Navigation = () => {
-  const {isOpen, open} = useModal()
+  const { isOpen, open } = useModal()
 
   return (
     <NavBar>
       <Container>
         <Link href='/'>
-          <Logo src='https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg' />
+          <Logo src={isMobile ? mobileLogo : logo} />
         </Link>
 
         <HamburgerMenu onClick={open}>
@@ -168,4 +168,8 @@ const Navigation = () => {
   )
 }
 
-export default () => (<ModalWrapper><Navigation /></ModalWrapper>);
+export default () => (
+  <ModalWrapper>
+    <Navigation />
+  </ModalWrapper>
+)
