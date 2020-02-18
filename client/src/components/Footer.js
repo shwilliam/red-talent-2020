@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import logo from '../../assets/images/logo_footer.svg'
 
 const StyledFooter = styled.footer`
   background: #414042;
@@ -8,7 +9,7 @@ const StyledFooter = styled.footer`
   text-align: center;
 `
 const Logo = styled.img`
-  width: 150px;
+  width: 160px;
   height: auto;
   padding: 1rem 0;
 `
@@ -28,7 +29,7 @@ const Link = styled.a`
 
 const Footer = () => (
   <StyledFooter>
-    <Logo src='https://redacademy.com/content/uploads/2017/07/RED-Logos-RGB-03-cropped-1.svg' />
+    <Logo src={logo} />
     <Copyright>
       Event promoted by <Link href='/'>RED Academy</Link>
     </Copyright>

@@ -1,7 +1,7 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import {Button} from './'
-import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
+import { Button } from './'
+import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
@@ -71,7 +71,7 @@ const DesktopContent = styled.section`
   text-align: center;
 `
 
-const Collapsible = ({Icon, dep, children}) => {
+const Collapsible = ({ icon, dep, children }) => {
   const [toggle, setToggle] = useState(false)
 
   const handleToggle = () => setToggle(!toggle)
@@ -80,7 +80,7 @@ const Collapsible = ({Icon, dep, children}) => {
     <>
       <BorderedContainer>
         <Header>
-          <Icon />
+          <img src={icon} width='50' />
           <Dep>{dep}</Dep>
           <StyledButton onClick={handleToggle}>
             {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
@@ -89,17 +89,17 @@ const Collapsible = ({Icon, dep, children}) => {
         {toggle ? (
           <Content>
             {children}
-            <Button to="/">Learn More</Button>
+            <Button to='/'>Learn More</Button>
           </Content>
         ) : null}
       </BorderedContainer>
 
       <DesktopContainer>
         <DesktopContent>
-          <Icon />
+          <img src={icon} width='50' />
           <Dep>{dep}</Dep>
           <ContentContainer>{children}</ContentContainer>
-          <Button to="/">Learn More</Button>
+          <Button to='/'>Learn More</Button>
         </DesktopContent>
       </DesktopContainer>
     </>
