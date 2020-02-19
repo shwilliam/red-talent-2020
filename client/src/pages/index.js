@@ -36,7 +36,6 @@ const RedBanner = styled.div`
   height: 30rem;
   background-color: #b84334;
   position: absolute;
-  top: 61.35px;
   left: 0;
   min-width: 20rem;
   max-width: 27rem;
@@ -55,7 +54,7 @@ const Home = () => {
   const {profiles} = useRouteData()
   const [filter, setFilter] = useState(['dev'])
 
-  const toggleFilter = dep => {
+  const toggleFilter = (dep, e) => {
     const idx = filter.indexOf(dep)
     const filterCopy = [...filter]
 
@@ -131,24 +130,18 @@ const Home = () => {
                   ].dep.some(f => filter.includes(f))
                 : true,
             )
-            .map(
-              (s, i) =>
-                console.log(s) || (
-                  <ProfileGridItem
-                    key={s.profile.name.split(' ').join('-')}
-                  >
-                    <ProfileCard
-                      name={s.profile.name}
-                      imgUrl={s.profile.imageurl}
-                      desc={s.profile.summary}
-                      dep={
-                        LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep
-                      }
-                      id={LINKEDIN_IDS[i]}
-                    />
-                  </ProfileGridItem>
-                ),
-            )}
+            .map((s, i) => (
+              <ProfileGridItem
+                key={s.profile.name.split(' ').join('-')}
+              >
+                <ProfileCard
+                  name={s.profile.name}
+                  imgUrl={s.profile.imageurl}
+                  desc={s.profile.summary}
+                  dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
+                />
+              </ProfileGridItem>
+            ))}
         </ProfileGrid>
       </GraduatesContainer>
 
