@@ -16,12 +16,14 @@ const TalentSection = styled.section`
   text-align: center;
   padding: 2rem;
   border-radius: 4px;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
   margin-top: 6rem;
   margin-bottom: 2rem;
 
   @media only screen and (min-width: 768px) {
     background: transparent;
     color: #fff;
+    box-shadow: none;
     margin-top: 10rem;
   }
 `
@@ -173,6 +175,7 @@ const EventImg = styled.img`
   width: 100%;
   margin: 0 auto;
   height: auto;
+  border-radius: 4px;
 
   @media only screen and (min-width: 768px) {
     flex-basis: 50%;
@@ -181,8 +184,10 @@ const EventImg = styled.img`
 `
 
 const EventDetails = styled.section`
+  text-align: center;
   @media only screen and (min-width: 768px) {
     display: flex;
+    text-align: left;
     flex-direction: column;
     justify-content: center;
     align-items: center;
