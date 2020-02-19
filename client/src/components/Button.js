@@ -6,6 +6,7 @@ const StyledLink = styled.a`
   display: inline-block;
   background: #d0382b;
   font-weight: 600;
+  border-radius: 4px;
   text-decoration: none;
   padding: 0.8rem 2rem;
   text-align: center;
