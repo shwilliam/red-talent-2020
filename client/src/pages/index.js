@@ -55,16 +55,15 @@ const Home = () => {
   const {profiles} = useRouteData()
   const [filter, setFilter] = useState(['dev'])
 
-  const toggleFilter = (dep) => {
+  const toggleFilter = (dep, e) => {
     const idx = filter.indexOf(dep)
     const filterCopy = [...filter]
 
-    if (idx === -1) {
-      filterCopy.push(dep)
-    } else if (filterCopy.length > 1) {
+    if (e.target.checked || idx === -1) {
+      filterCopy.push(dep) && filterCopy.splice(0, 1)
+    } else {
       filterCopy.splice(idx, 1)
     }
-
     setFilter(filterCopy)
   }
 
@@ -88,9 +87,7 @@ const Home = () => {
 
       <GraduatesContainer>
         <GraduatesLabel>
-          <Label
-            checked={filter.includes('des')}
-          >
+          <Label checked={filter.includes('des')}>
             {/* TODO: Change label on mobile and desktop */}
             Design
             <Input
@@ -101,9 +98,7 @@ const Home = () => {
             />
           </Label>
 
-          <Label
-            checked={filter.includes('dev')}
-          >
+          <Label checked={filter.includes('dev')}>
             {/* TODO: Change label on mobile and desktop */}
             Developers
             <Input
@@ -114,9 +109,7 @@ const Home = () => {
             />
           </Label>
 
-          <Label
-            checked={filter.includes('mar')}
-          >
+          <Label checked={filter.includes('mar')}>
             {' '}
             {/* TODO: Change label on mobile and desktop */}
             Marketers
