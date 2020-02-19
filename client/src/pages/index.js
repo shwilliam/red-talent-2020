@@ -55,7 +55,7 @@ const Home = () => {
   const {profiles} = useRouteData()
   const [filter, setFilter] = useState(['dev'])
 
-  const toggleFilter = (dep, e) => {
+  const toggleFilter = dep => {
     const idx = filter.indexOf(dep)
     const filterCopy = [...filter]
 
@@ -131,18 +131,24 @@ const Home = () => {
                   ].dep.some(f => filter.includes(f))
                 : true,
             )
-            .map((s, i) => (
-              <ProfileGridItem
-                key={s.profile.name.split(' ').join('-')}
-              >
-                <ProfileCard
-                  name={s.profile.name}
-                  imgUrl={s.profile.imageurl}
-                  desc={s.profile.summary}
-                  dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
-                />
-              </ProfileGridItem>
-            ))}
+            .map(
+              (s, i) =>
+                console.log(s) || (
+                  <ProfileGridItem
+                    key={s.profile.name.split(' ').join('-')}
+                  >
+                    <ProfileCard
+                      name={s.profile.name}
+                      imgUrl={s.profile.imageurl}
+                      desc={s.profile.summary}
+                      dep={
+                        LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep
+                      }
+                      id={LINKEDIN_IDS[i]}
+                    />
+                  </ProfileGridItem>
+                ),
+            )}
         </ProfileGrid>
       </GraduatesContainer>
 
