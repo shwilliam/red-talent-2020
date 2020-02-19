@@ -36,6 +36,7 @@ const ModalContent = styled.div`
   border-radius: 15px;
   height: 100vh;
   overflow-y: scroll;
+  z-index: 999;
 
   @media only screen and (min-width: 800px) {
     border-radius: 5px;

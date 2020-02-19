@@ -9,7 +9,7 @@ const StyledLi = styled.li`
   box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.33);
   @media only screen and (min-width: 700px) {
     width: 250px;
-    height: 300px;
+    height: 360px;
   }
 `
 

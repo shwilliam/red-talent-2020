@@ -17,9 +17,8 @@ const CheckedLabel = styled.label`
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
-    height: 30px;
+    height: 27px;
     margin: 0;
-    border: 2px solid #b84334;
     letter-spacing: 0.81px;
     &:first-child {
       border-radius: 3px 0 0 3px;
@@ -46,7 +45,7 @@ const UnCheckedLabel = styled.label`
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
-    height: 30px;
+    height: 27px;
     margin: 0;
     border: 2px solid #eed7d5;
     color: #9e9b9b;

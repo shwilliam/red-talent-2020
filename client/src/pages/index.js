@@ -47,7 +47,7 @@ const RedBanner = styled.div`
 `
 
 const GraduatesContainer = styled.main`
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 `
 
 const Home = () => {

@@ -33,10 +33,13 @@ const StyledDiv = styled.div`
 
 const Container = styled.div`
   position: absolute;
-  top: 20px;
+  top: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  @media only screen and (min-width: 700px) {
+    padding: 0 20px;
+  }
 `
 
 const StyledP = styled.p`
@@ -49,6 +52,7 @@ const StyledP = styled.p`
 
   @media only screen and (min-width: 700px) {
     font-size: 1rem;
+    width: 100%;
   }
 `
 
@@ -59,6 +63,7 @@ const StyledDep = styled.p`
   margin: 0;
   width: 65%;
   padding-top: 5px;
+  z-index: -999;
 
   @media only screen and (min-width: 700px) {
     font-size: 1rem;
@@ -70,6 +75,7 @@ const StyledImg = styled.img`
   height: 50%;
   border-radius: 6px 6px 0 0;
   object-fit: cover;
+  z-index: -999;
 
   @media only screen and (min-width: 700px) {
     width: 250px;
@@ -81,6 +87,9 @@ const LinkedInLogo = styled(IoLogoLinkedin)`
   color: #555;
   font-size: 2.4rem;
   border-radius: 5px;
+  @media only screen and (min-width: 700px) {
+    font-size: 2.6rem;
+  }
 `
 
 const LinkedInLink = styled.a`
