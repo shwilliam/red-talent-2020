@@ -88,7 +88,7 @@ const Home = () => {
         <GraduatesLabel>
           <Label checked={filter.includes('des')}>
             {/* TODO: Change label on mobile and desktop */}
-            Design
+            Designers
             <Input
               onChange={e => toggleFilter('des', e)}
               type="checkbox"

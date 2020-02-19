@@ -8,6 +8,7 @@ const TextButton = styled.button`
   border: none;
   font: inherit;
   cursor: pointer;
+  height: 100%;
 `
 
 export default TextButton
