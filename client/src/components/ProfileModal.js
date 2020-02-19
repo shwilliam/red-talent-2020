@@ -12,14 +12,14 @@ const BigTextButton = styled.button`
   font-size: 2.5rem;
   opacity: 0.8;
   cursor: pointer;
-  // padding: 1rem 1rem 1rem 0;
+  padding: 1rem 1rem 1rem 0;
 
   &:hover {
     opacity: 1;
   }
 
   @media only screen and (min-width: 400px) {
-    // padding: 1rem;
+    padding: 1rem;
   }
 `
 
