@@ -51,6 +51,8 @@ const MenuLinkContainer = styled.div`
   width: 100%;
   z-index: 1;
   background: #fff;
+  height: 30%;
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   color: #fff;
   position: absolute;
   top: 0;
@@ -68,7 +70,9 @@ const MenuLink = styled.a`
   font-size: 1.1rem;
   text-decoration: none;
   font-family: Lato;
-
+  border-bottom: 1px solid #979797;
+  width: 90%;
+  text-align: center;
   &:hover {
     color: #333;
   }
@@ -76,6 +80,7 @@ const MenuLink = styled.a`
   @media only screen and (min-width: 768px) {
     padding-right: 1.75rem;
     font-size: 1rem;
+    border: none;
   }
 `
 
