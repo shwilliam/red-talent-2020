@@ -5,6 +5,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
 
 const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
+  border-radius: 4px;
   background: #fff;
   color: #000;
   margin: 2rem auto;
