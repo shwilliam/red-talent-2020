@@ -48,7 +48,7 @@ const StyledImg = styled.img`
   }
 `
 
-const ProfileCard = ({name, desc, imgUrl, dep}) => (
+const ProfileCard = ({id, name, desc, imgUrl, dep}) => (
   <ModalWrapper>
     <ModalOpenButton>
       <StyledDiv>
@@ -63,6 +63,7 @@ const ProfileCard = ({name, desc, imgUrl, dep}) => (
       imgURL={imgUrl}
       dep={dep.map(d => DEPS[d]).join(', ')}
       desc={desc}
+      id={id}
     />
   </ModalWrapper>
 )
