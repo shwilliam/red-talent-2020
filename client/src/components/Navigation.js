@@ -6,8 +6,6 @@ import { IoIosArrowBack } from 'react-icons/io'
 import logo from '../../assets/images/logo.svg'
 import mobileLogo from '../../assets/images/logo_mobile.svg'
 
-const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 768 : true
-
 const NavBar = styled.nav`
   color: #fff;
   background-color: transparent;
@@ -38,9 +36,24 @@ const Link = styled.a`
 `
 
 const Logo = styled.img`
+  display: none;
   width: 160px;
   height: auto;
   padding: 1rem 0;
+
+  @media only screen and (min-width: 768px) {
+    display: block;
+  }
+`
+
+const MobileLogo = styled.img`
+  width: 160px;
+  height: auto;
+  padding: 1rem 0;
+
+  @media only screen and (min-width: 768px) {
+    display: none;
+  }
 `
 
 const MenuLinkContainer = styled.div`
@@ -154,7 +167,8 @@ const Navigation = () => {
     <NavBar>
       <Container>
         <Link href='/'>
-          <Logo src={isMobile ? mobileLogo : logo} />
+          <Logo src={logo} />
+          <MobileLogo src={mobileLogo} />
         </Link>
 
         <HamburgerMenu onClick={open}>
