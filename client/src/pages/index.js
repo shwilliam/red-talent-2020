@@ -135,6 +135,7 @@ const Home = () => {
                   imgUrl={s.profile.imageurl}
                   desc={s.profile.summary}
                   dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
+                  id={Object.keys(LINKEDIN_IDS)[i]}
                 />
               </ProfileGridItem>
             ))}

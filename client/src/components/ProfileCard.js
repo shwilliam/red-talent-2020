@@ -107,7 +107,7 @@ const ProfileCard = ({id, name, desc, imgUrl, dep}) => (
           <StyledDep>{dep}</StyledDep>
         </Container>
         <LinkedInLink
-          href={`linkedin.com/in/${id}`}
+          href={`https://www.linkedin.com/in/${id}`}
           target="_blank"
           rel="noopener noreferrer"
         >
