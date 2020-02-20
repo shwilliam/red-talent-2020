@@ -163,11 +163,12 @@ const WhoWeAreImg = styled.img`
 
 const KeyDesktopStyles = styled.section`
   @media only screen and (min-width: 768px) {
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5rem;
   }
 `
 
@@ -217,7 +218,7 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white />
+      <Navigation white route="/" />
       <Banner image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>

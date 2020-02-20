@@ -2,10 +2,11 @@ import React from 'react'
 import styled from 'styled-components'
 
 const StyledLink = styled.a`
-  color: #fff;
+  color: ${p => (p.noFill ? '#d0382b' : '#fff')};
   display: inline-block;
-  background: #d0382b;
+  background: ${p => (p.noFill ? 'transparent' : '#d0382b')};
   font-weight: ${p => (p.noBold ? '400' : '600')};
+  border: 2px solid #d0382b;
   border-radius: 4px;
   text-decoration: none;
   padding: ${p => (p.small ? '0.3rem 0.8rem' : '0.8rem 2rem')};
@@ -13,8 +14,14 @@ const StyledLink = styled.a`
   margin-top: ${p => (p.padded ? '2rem' : '0')};
 `
 
-const Button = ({to, children, small, padded, noBold}) => (
-  <StyledLink href={to} small={small} padded={padded} noBold={noBold}>
+const Button = ({to, children, small, padded, noBold, noFill}) => (
+  <StyledLink
+    href={to}
+    small={small}
+    padded={padded}
+    noBold={noBold}
+    noFill={noFill}
+  >
     {children}
   </StyledLink>
 )
