@@ -163,11 +163,12 @@ const WhoWeAreImg = styled.img`
 
 const KeyDesktopStyles = styled.section`
   @media only screen and (min-width: 768px) {
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5rem;
   }
 `
 

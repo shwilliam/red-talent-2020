@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
+import React, {useState} from 'react'
 import styled from 'styled-components'
-import { Button } from './'
-import { MdKeyboardArrowDown, MdKeyboardArrowUp } from 'react-icons/md'
+import {Button} from './'
+import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 
 const BorderedContainer = styled.section`
   border: 1px solid #d0382b;
@@ -57,12 +57,18 @@ const Dep = styled.h3`
 `
 
 const ContentContainer = styled.p`
-  min-height: 200px;
+  min-height: 240px;
   padding: 0 0.5rem;
+
+  @media only screen and (min-width: 1200px) {
+    min-height: 180px;
+  }
 `
 
 const DesktopContainer = styled.section`
-  width: 400px;
+  @media only screen and (min-width: 768px) {
+    padding: 1rem 0;
+  }
 `
 
 const DesktopContent = styled.section`
@@ -72,7 +78,7 @@ const DesktopContent = styled.section`
   text-align: center;
 `
 
-const Collapsible = ({ icon, dep, children }) => {
+const Collapsible = ({icon, dep, children}) => {
   const [toggle, setToggle] = useState(false)
 
   const handleToggle = () => setToggle(!toggle)
@@ -81,7 +87,7 @@ const Collapsible = ({ icon, dep, children }) => {
     <>
       <BorderedContainer>
         <Header>
-          <img src={icon} width='50' />
+          <img src={icon} width="50" />
           <Dep>{dep}</Dep>
           <StyledButton onClick={handleToggle}>
             {toggle ? <MdKeyboardArrowUp /> : <MdKeyboardArrowDown />}
@@ -90,17 +96,19 @@ const Collapsible = ({ icon, dep, children }) => {
         {toggle ? (
           <Content>
             {children}
-            <Button to='/'>Learn More</Button>
+            <Button to="/">Learn More</Button>
           </Content>
         ) : null}
       </BorderedContainer>
 
       <DesktopContainer>
         <DesktopContent>
-          <img src={icon} width='50' />
+          <img src={icon} width="50" />
           <Dep>{dep}</Dep>
           <ContentContainer>{children}</ContentContainer>
-          <Button to='/'>Learn More</Button>
+          <Button noFill to="/">
+            Learn More
+          </Button>
         </DesktopContent>
       </DesktopContainer>
     </>
