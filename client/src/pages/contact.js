@@ -381,7 +381,7 @@ const ContactPage = styled.main`
 export default () => (
   <>
     <ContactPage className="site-layout">
-      <Navigation />
+      <Navigation absolute />
       <form
         className="section__container"
         method="POST"

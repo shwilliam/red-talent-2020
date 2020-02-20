@@ -10,7 +10,7 @@ const StyledHeader = styled.header`
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 30%;
+    top: 18rem;
     left: 5%;
     min-width: 30rem;
     width: 45%;

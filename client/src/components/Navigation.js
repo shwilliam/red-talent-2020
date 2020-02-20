@@ -1,8 +1,8 @@
 import React from 'react'
-import { ModalWrapper, Modal, useModal } from 'react-modal-wrap'
+import {ModalWrapper, Modal, useModal} from 'react-modal-wrap'
 import styled from 'styled-components'
-import { GiHamburgerMenu } from 'react-icons/gi'
-import { IoIosArrowBack } from 'react-icons/io'
+import {GiHamburgerMenu} from 'react-icons/gi'
+import {IoIosArrowBack} from 'react-icons/io'
 import logo from '../../assets/images/logo.svg'
 import mobileLogo from '../../assets/images/logo_mobile.svg'
 
@@ -13,11 +13,17 @@ const NavBar = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 90%;
+  z-index: 999;
 
   @media only screen and (min-width: 700px) {
-    background: #fff;
     margin: 0 auto;
     width: 100%;
+  }
+`
+
+const WhiteNavBar = styled(NavBar)`
+  @media only screen and (min-width: 700px) {
+    background: #fff;
   }
 `
 
@@ -141,7 +147,7 @@ const ModalHeader = styled.div`
 `
 
 const NavigationModal = () => {
-  const { close } = useModal()
+  const {close} = useModal()
 
   return (
     <Modal overlay>
@@ -152,43 +158,51 @@ const NavigationModal = () => {
       </ModalHeader>
 
       <MenuLinkContainer>
-        <MenuLink href='/'>Graduates</MenuLink>
-        <MenuLink href='/contact'>Contact</MenuLink>
-        <MenuLink href='/event'>Event</MenuLink>
+        <MenuLink href="/">Graduates</MenuLink>
+        <MenuLink href="/contact">Contact</MenuLink>
+        <MenuLink href="/event">Event</MenuLink>
       </MenuLinkContainer>
     </Modal>
   )
 }
 
 const Navigation = () => {
-  const { isOpen, open } = useModal()
+  const {isOpen, open} = useModal()
 
   return (
-    <NavBar>
-      <Container>
-        <Link href='/'>
-          <Logo src={logo} />
-          <MobileLogo src={mobileLogo} />
-        </Link>
+    <Container>
+      <Link href="/">
+        <Logo src={logo} />
+        <MobileLogo src={mobileLogo} />
+      </Link>
 
-        <HamburgerMenu onClick={open}>
-          <GiHamburgerMenu />
-        </HamburgerMenu>
+      <HamburgerMenu onClick={open}>
+        <GiHamburgerMenu />
+      </HamburgerMenu>
 
-        {isOpen && <NavigationModal />}
+      {isOpen && <NavigationModal />}
 
-        <DesktopNavBar>
-          <MenuLink href='/'>Graduates</MenuLink>
-          <MenuLink href='/contact'>Contact</MenuLink>
-          <MenuLink href='/event'>Event</MenuLink>
-        </DesktopNavBar>
-      </Container>
-    </NavBar>
+      <DesktopNavBar>
+        <MenuLink href="/">Graduates</MenuLink>
+        <MenuLink href="/contact">Contact</MenuLink>
+        <MenuLink href="/event">Event</MenuLink>
+      </DesktopNavBar>
+    </Container>
   )
 }
 
-export default () => (
+export default ({absolute = false, white = false}) => (
   <ModalWrapper>
-    <Navigation />
+    {white ? (
+      <WhiteNavBar
+        style={{position: absolute ? 'absolute' : 'unset'}}
+      >
+        <Navigation />
+      </WhiteNavBar>
+    ) : (
+      <NavBar style={{position: absolute ? 'absolute' : 'unset'}}>
+        <Navigation />
+      </NavBar>
+    )}
   </ModalWrapper>
 )

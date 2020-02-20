@@ -198,7 +198,7 @@ const ProfileModal = ({id, name, imgURL, dep, desc}) => {
                 <ModalParagraph>{desc}</ModalParagraph>
                 <ModalFooter>
                   <a
-                    href={`linkedin.com/in/${id}`}
+                    href={`https://www.linkedin.com/in/${id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
