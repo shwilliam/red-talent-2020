@@ -62,7 +62,7 @@ const ContactPage = styled.main`
   --color-black: #000;
   --color-grey: #808285;
 
-  font-size: 22px;
+  // font-size: 22px;
   line-height: 1.25;
   height: 100vh;
 
@@ -85,7 +85,7 @@ const ContactPage = styled.main`
     height: 26px;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     .header {
       background: transparent;
       position: absolute;
@@ -99,7 +99,7 @@ const ContactPage = styled.main`
     flex-direction: column;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     .section__container {
       height: 100%;
       min-height: 500px;
@@ -137,7 +137,7 @@ const ContactPage = styled.main`
     margin-top: 3.5rem;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     .section__contact {
       margin-top: 0;
       display: flex;
@@ -161,11 +161,13 @@ const ContactPage = styled.main`
   }
 
   .title--desktop {
+    margin-top: 2rem;
     font-size: 2.2rem;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     .title--desktop {
+      margin-top: 10vh;
       font-size: 60px;
     }
   }
@@ -179,13 +181,13 @@ const ContactPage = styled.main`
   .label,
   .input,
   .button {
-    font-size: 0.85rem;
+    font-size: 1rem;
   }
 
   .label--block {
     display: inline-block;
     width: 100%;
-    margin-bottom: var(--spacing-v);
+    margin-bottom: calc(2 * var(--spacing-v));
   }
 
   .input {
@@ -200,6 +202,10 @@ const ContactPage = styled.main`
     border-radius: 0;
   }
 
+  .input:placeholder-shown {
+    border-color: var(--color-black) !important;
+  }
+
   .input:invalid {
     border-color: var(--color-red);
     outline: none;
@@ -210,7 +216,7 @@ const ContactPage = styled.main`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: var(--spacing-v);
+    margin-bottom: calc(2 * var(--spacing-v));
     padding-bottom: var(--spacing-v--s);
     border: none;
     background-color: #fff;
@@ -258,7 +264,7 @@ const ContactPage = styled.main`
   .label .sneaky-label {
     top: 0;
     color: black;
-    font-size: 0.6rem;
+    font-size: 1rem;
   }
 
   .phone-confidential {
@@ -328,7 +334,7 @@ const ContactPage = styled.main`
     display: none;
   }
 
-  @media (min-width: 700px) {
+  @media (min-width: 850px) {
     .select__container {
       flex-direction: row;
       width: 100%;
@@ -349,17 +355,16 @@ const ContactPage = styled.main`
     .select__title {
       padding-top: 0;
       margin-bottom: 0;
-      font-size: 0.85rem;
+      font-size: 1rem;
       font-weight: initial;
     }
 
     .select__control {
-      margin-right: var(--spacing-h--s);
-      top: 1px;
+      top: 0.75px;
     }
 
     .select__label {
-      font-size: 0.85rem;
+      font-size: 1rem;
       font-weight: initial;
       line-height: 2;
     }
@@ -381,7 +386,7 @@ const ContactPage = styled.main`
 export default () => (
   <>
     <ContactPage className="site-layout">
-      <Navigation absolute />
+      <Navigation />
       <form
         className="section__container"
         method="POST"
@@ -411,6 +416,7 @@ export default () => (
             <label className="label label--block">
               <span className="sneaky-label">Full Name</span>
               <input
+                placeholder=" "
                 className="input"
                 type="text"
                 name="name"
@@ -421,6 +427,7 @@ export default () => (
             <label className="label label--block">
               <span className="sneaky-label">Email</span>
               <input
+                placeholder=" "
                 className="input"
                 type="email"
                 name="_replyto"
