@@ -24,6 +24,7 @@ if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 const GraduatesBanner = styled.img`
   width: 100%;
   object-fit: cover;
+  object-position: top;
   height: 12rem;
   z-index: -99;
 
@@ -37,8 +38,7 @@ const RedBanner = styled.div`
   background-color: #b84334;
   position: absolute;
   left: 0;
-  min-width: 20rem;
-  max-width: 27rem;
+  width: 40vw;
   display: none;
 
   @media only screen and (min-width: 700px) {
@@ -69,8 +69,8 @@ const Home = () => {
   return (
     <>
       <Navigation />
-      <RedBanner />
       <GraduatesBanner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
+      <RedBanner />
       <Header>
         <Title>Graduates</Title>
 
@@ -87,7 +87,6 @@ const Home = () => {
       <GraduatesContainer>
         <GraduatesLabel>
           <Label checked={filter.includes('des')}>
-            {/* TODO: Change label on mobile and desktop */}
             Designers
             <Input
               onChange={e => toggleFilter('des', e)}
@@ -98,7 +97,6 @@ const Home = () => {
           </Label>
 
           <Label checked={filter.includes('dev')}>
-            {/* TODO: Change label on mobile and desktop */}
             Developers
             <Input
               onChange={e => toggleFilter('dev', e)}
@@ -109,8 +107,6 @@ const Home = () => {
           </Label>
 
           <Label checked={filter.includes('mar')}>
-            {' '}
-            {/* TODO: Change label on mobile and desktop */}
             Marketers
             <Input
               onChange={e => toggleFilter('mar', e)}
