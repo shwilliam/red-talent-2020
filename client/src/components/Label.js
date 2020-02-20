@@ -14,13 +14,13 @@ const CheckedLabel = styled.label`
   border-radius: 5px;
   font-weight: 400;
 
-
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
     height: 27px;
     margin: 0;
     letter-spacing: 0.81px;
+    border-radius: 0;
 
     &:first-of-type {
       border-radius: 3px 0 0 3px;
@@ -44,7 +44,6 @@ const UnCheckedLabel = styled.label`
   border-radius: 5px;
   font-weight: 400;
 
-
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
@@ -53,6 +52,8 @@ const UnCheckedLabel = styled.label`
     border: 2px solid #eed7d5;
     color: #9e9b9b;
     letter-spacing: 0.81px;
+    border-radius: 0;
+
     &:first-of-type {
       border-radius: 3px 0 0 3px;
       border-right: none;
