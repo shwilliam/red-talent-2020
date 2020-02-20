@@ -1,5 +1,3 @@
-import React from 'react'
-
-const Loading = () => <p>loading...</p>
+const Loading = () => null
 
 export default Loading

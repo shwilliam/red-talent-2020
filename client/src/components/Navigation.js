@@ -1,10 +1,10 @@
 import React from 'react'
 import {ModalWrapper, Modal, useModal} from 'react-modal-wrap'
 import styled from 'styled-components'
-import {GiHamburgerMenu} from 'react-icons/gi'
-import {IoIosArrowBack} from 'react-icons/io'
+import {IoMdClose, IoIosMenu} from 'react-icons/io'
 import logo from '../../assets/images/logo.svg'
 import mobileLogo from '../../assets/images/logo_mobile.svg'
+import {Button} from './index'
 
 const NavBar = styled.nav`
   color: #fff;
@@ -29,7 +29,7 @@ const WhiteNavBar = styled(NavBar)`
 
 const Container = styled.div`
   @media only screen and (min-width: 768px) {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
@@ -53,9 +53,9 @@ const Logo = styled.img`
 `
 
 const MobileLogo = styled.img`
-  width: 160px;
+  width: 250px;
   height: auto;
-  padding: 1rem 0;
+  padding: 1.5rem 1rem 1rem 0.75rem;
 
   @media only screen and (min-width: 768px) {
     display: none;
@@ -70,9 +70,10 @@ const MenuLinkContainer = styled.div`
   width: 100%;
   z-index: 1;
   background: #fff;
-  height: 30%;
+  height: 300px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   color: #fff;
+  padding-top: 3rem;
   position: absolute;
   top: 0;
   left: 0;
@@ -84,16 +85,19 @@ const MenuLinkContainer = styled.div`
   }
 `
 const MenuLink = styled.a`
-  color: #1b1a1a;
-  padding: 0.75rem 0;
-  font-size: 1.1rem;
+  color: ${p => (p.disabled ? '#ccc' : '#1b1a1a')};
+  padding: 1rem 0;
+  font-size: 1.2rem;
   text-decoration: none;
   font-family: Lato;
   border-bottom: 1px solid #979797;
   width: 90%;
   text-align: center;
+  touch-events: ${p => (p.disabled ? 'none' : 'initial')};
+  pointer-events: ${p => (p.disabled ? 'none' : 'initial')};
+
   &:hover {
-    color: #333;
+    color: ${p => (p.disabled ? '#ccc' : '#333')};
   }
 
   @media only screen and (min-width: 768px) {
@@ -107,10 +111,11 @@ const HamburgerMenu = styled.p`
   position: absolute;
   z-index: 2;
   cursor: pointer;
-  top: 15px;
-  right: 10px;
+  top: 0;
+  right: 0;
+  padding: 1.35rem 1rem 1rem 1rem;
   color: #fff;
-  font-size: 1.1rem;
+  font-size: 2.1rem;
 
   @media only screen and (min-width: 768px) {
     display: none;
@@ -131,12 +136,20 @@ const BigTextButton = styled.button`
   background-color: transparent;
   border: none;
   font: inherit;
-  font-size: 2rem;
+  font-size: 2.5rem;
+  opacity: 0.8;
   cursor: pointer;
-  padding: 1rem 1rem 1rem 0;
+  padding: 1rem 0.5rem 1rem 0;
+
+  &:hover {
+    opacity: 1;
+  }
 
   @media only screen and (min-width: 400px) {
-    padding: 1rem;
+    padding: 1.25rem 0.5rem 1rem 1rem;
+  }
+  @media only screen and (min-width: 700px) {
+    display: none;
   }
 `
 
@@ -144,6 +157,9 @@ const ModalHeader = styled.div`
   position: sticky;
   top: 0;
   z-index: 999;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1rem;
 `
 
 const NavigationModal = () => {
@@ -152,15 +168,20 @@ const NavigationModal = () => {
   return (
     <Modal overlay>
       <ModalHeader>
+        <MobileLogo src={logo} />
         <BigTextButton onClick={close}>
-          <IoIosArrowBack />
+          <IoMdClose />
         </BigTextButton>
       </ModalHeader>
 
       <MenuLinkContainer>
-        <MenuLink href="/">Graduates</MenuLink>
-        <MenuLink href="/contact">Contact</MenuLink>
-        <MenuLink href="/event">Event</MenuLink>
+        <MenuLink disabled href="/">
+          Graduates
+        </MenuLink>
+        <MenuLink href="/">About us</MenuLink>
+        <Button padded to="/event">
+          Event
+        </Button>
       </MenuLinkContainer>
     </Modal>
   )
@@ -177,15 +198,19 @@ const Navigation = () => {
       </Link>
 
       <HamburgerMenu onClick={open}>
-        <GiHamburgerMenu />
+        <IoIosMenu />
       </HamburgerMenu>
 
       {isOpen && <NavigationModal />}
 
       <DesktopNavBar>
-        <MenuLink href="/">Graduates</MenuLink>
-        <MenuLink href="/contact">Contact</MenuLink>
-        <MenuLink href="/event">Event</MenuLink>
+        <MenuLink disabled href="/">
+          Graduates
+        </MenuLink>
+        <MenuLink href="/">About us</MenuLink>
+        <Button small noBold to="/">
+          Event
+        </Button>
       </DesktopNavBar>
     </Container>
   )
