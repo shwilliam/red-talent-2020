@@ -85,7 +85,12 @@ const MenuLinkContainer = styled.div`
   }
 `
 const MenuLink = styled.a`
-  color: ${p => (p.disabled ? '#ccc' : '#1b1a1a')};
+  position: relative;
+  top: 3.25px;
+  display: flex;
+  flex-direction: column;
+  color: ${p =>
+    p.disabled ? '#ccc' : p.active ? '#d0382b' : '#1b1a1a'};
   padding: 1rem 0;
   font-size: 1.2rem;
   text-decoration: none;
@@ -97,13 +102,24 @@ const MenuLink = styled.a`
   pointer-events: ${p => (p.disabled ? 'none' : 'initial')};
 
   &:hover {
-    color: ${p => (p.disabled ? '#ccc' : '#333')};
+    color: ${p =>
+      p.disabled ? '#ccc' : p.active ? '#d0382b' : '#333'};
   }
 
   @media only screen and (min-width: 768px) {
     padding-right: 1.75rem;
     font-size: 1rem;
-    border: none;
+    border-color: transparent;
+
+    &:after {
+      content: '';
+      display: block;
+      margin: 0 auto;
+      width: 35px;
+      padding-top: 6px;
+      border-bottom: 1px solid
+        ${p => (p.active ? '#d0382b' : 'transparent')};
+    }
   }
 `
 
@@ -126,7 +142,9 @@ const DesktopNavBar = styled.div`
   display: none;
 
   @media only screen and (min-width: 768px) {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
   }
 `
 
@@ -187,7 +205,7 @@ const NavigationModal = () => {
   )
 }
 
-const Navigation = () => {
+const Navigation = ({route}) => {
   const {isOpen, open} = useModal()
 
   return (
@@ -207,7 +225,9 @@ const Navigation = () => {
         <MenuLink disabled href="/">
           Graduates
         </MenuLink>
-        <MenuLink href="/">About us</MenuLink>
+        <MenuLink active={route === '/'} href="/">
+          About us
+        </MenuLink>
         <Button small noBold to="/">
           Event
         </Button>
@@ -216,17 +236,17 @@ const Navigation = () => {
   )
 }
 
-export default ({absolute = false, white = false}) => (
+export default ({absolute = false, white = false, route}) => (
   <ModalWrapper>
     {white ? (
       <WhiteNavBar
         style={{position: absolute ? 'absolute' : 'unset'}}
       >
-        <Navigation />
+        <Navigation route={route} />
       </WhiteNavBar>
     ) : (
       <NavBar style={{position: absolute ? 'absolute' : 'unset'}}>
-        <Navigation />
+        <Navigation route={route} />
       </NavBar>
     )}
   </ModalWrapper>

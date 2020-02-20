@@ -217,7 +217,7 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white />
+      <Navigation white route="/" />
       <Banner image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
