@@ -165,11 +165,12 @@ const WhoWeAreImg = styled.img`
 
 const KeyDesktopStyles = styled.section`
   @media only screen and (min-width: 768px) {
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 2.5rem;
   }
 `
 
@@ -224,10 +225,13 @@ const Event = () => {
     <main>
       <Navigation white />
       <Banner image="https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg" />
+
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
-        <Button to="/contact">Join Event</Button>
+        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+          Join Event
+        </Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
       <WhoWeAreImg src={Students} />
@@ -289,7 +293,9 @@ const Event = () => {
         </EventDetails>
       </EventSection>
       <Center style={{marginBottom: '5rem'}}>
-        <Button to="/contact">Join Event</Button>
+        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+          Join Event
+        </Button>
       </Center>
       <Footer />
     </main>
