@@ -6,6 +6,8 @@ import dmLogo from '../../assets/images/dm.svg'
 import uxuiLogo from '../../assets/images/ux_ui.svg'
 import Footer from '../components/Footer'
 import ReactGA from 'react-ga'
+import TalentPhoto from '../../assets/images/talent-connect.png'
+import Students from '../../assets/images/students.png'
 
 if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 
@@ -185,7 +187,10 @@ const EventImg = styled.img`
 `
 
 const EventDetails = styled.section`
-  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  padding-bottom: 15px;
   @media only screen and (min-width: 768px) {
     display: flex;
     text-align: left;
@@ -218,8 +223,9 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white route="/" />
-      <Banner image="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+      <Navigation white />
+      <Banner image="https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg" />
+
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
@@ -228,7 +234,7 @@ const Event = () => {
         </Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
-      <WhoWeAreImg src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+      <WhoWeAreImg src={Students} />
       <Paragraph>
         RED Academy is a leading-edge design and technology school,
         with programs designed unlike any other. We also produce the
@@ -276,14 +282,14 @@ const Event = () => {
       <Title style={{color: '#5c5c5c'}}>Event Details</Title>
       <EventSection>
         <EventImgContainer>
-          <EventImg src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
+          <EventImg src={TalentPhoto} />
           <EventImgText>RED Academy Talent Connect</EventImgText>
         </EventImgContainer>
         <EventDetails>
           <EventTitle>Date and Time</EventTitle>
           <EventDesc>05 March, 2020 6PM</EventDesc>
           <EventTitle>Location</EventTitle>
-          <EventDesc>Red Academy</EventDesc>
+          <EventDesc>RED Academy</EventDesc>
         </EventDetails>
       </EventSection>
       <Center style={{marginBottom: '5rem'}}>
