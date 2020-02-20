@@ -223,7 +223,7 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white />
+      <Navigation white route="/" />
       <Banner image="https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg" />
 
       <TalentSection>
