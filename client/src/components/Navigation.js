@@ -197,7 +197,10 @@ const NavigationModal = () => {
           Graduates
         </MenuLink>
         <MenuLink href="/">About us</MenuLink>
-        <Button padded to="/event">
+        <Button
+          padded
+          to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869"
+        >
           Event
         </Button>
       </MenuLinkContainer>
@@ -228,7 +231,11 @@ const Navigation = ({route}) => {
         <MenuLink active={route === '/'} href="/">
           About us
         </MenuLink>
-        <Button small noBold to="/">
+        <Button
+          small
+          noBold
+          to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869"
+        >
           Event
         </Button>
       </DesktopNavBar>

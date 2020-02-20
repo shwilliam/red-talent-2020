@@ -223,7 +223,9 @@ const Event = () => {
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
-        <Button to="/contact">Join Event</Button>
+        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+          Join Event
+        </Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
       <WhoWeAreImg src="https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__340.jpg" />
@@ -285,7 +287,9 @@ const Event = () => {
         </EventDetails>
       </EventSection>
       <Center style={{marginBottom: '5rem'}}>
-        <Button to="/contact">Join Event</Button>
+        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+          Join Event
+        </Button>
       </Center>
       <Footer />
     </main>
