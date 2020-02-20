@@ -47,7 +47,7 @@ const RedBanner = styled.div`
 `
 
 const GraduatesContainer = styled.main`
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 `
 
 const Home = () => {
@@ -87,7 +87,7 @@ const Home = () => {
       <GraduatesContainer>
         <GraduatesLabel>
           <Label checked={filter.includes('des')}>
-            Design
+            Designers
             <Input
               onChange={e => toggleFilter('des', e)}
               type="checkbox"
@@ -126,24 +126,18 @@ const Home = () => {
                   ].dep.some(f => filter.includes(f))
                 : true,
             )
-            .map(
-              (s, i) =>
-                console.log(s) || (
-                  <ProfileGridItem
-                    key={s.profile.name.split(' ').join('-')}
-                  >
-                    <ProfileCard
-                      name={s.profile.name}
-                      imgUrl={s.profile.imageurl}
-                      desc={s.profile.summary}
-                      dep={
-                        LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep
-                      }
-                      id={Object.keys(LINKEDIN_IDS)[i]}
-                    />
-                  </ProfileGridItem>
-                ),
-            )}
+            .map((s, i) => (
+              <ProfileGridItem
+                key={s.profile.name.split(' ').join('-')}
+              >
+                <ProfileCard
+                  name={s.profile.name}
+                  imgUrl={s.profile.imageurl}
+                  desc={s.profile.summary}
+                  dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
+                />
+              </ProfileGridItem>
+            ))}
         </ProfileGrid>
       </GraduatesContainer>
 

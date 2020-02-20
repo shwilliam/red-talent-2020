@@ -5,20 +5,21 @@ const CheckedLabel = styled.label`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d0382b;
+  background-color: #b84334;
   color: #fff;
   width: 99px;
   margin: 0 8.5px;
   border: 1px solid #d0382b;
-  height: 46px;
-  border-radius: 3px;
+  height: 44px;
+  border-radius: 5px;
+  font-weight: 400;
+
 
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
-    height: 30px;
+    height: 27px;
     margin: 0;
-    border: 2px solid #d0382b;
     letter-spacing: 0.81px;
 
     &:first-of-type {
@@ -35,22 +36,23 @@ const UnCheckedLabel = styled.label`
   justify-content: center;
   align-items: center;
   background-color: white;
-  color: #d0382b;
+  color: #b84334;
   width: 99px;
   margin: 0 8.5px;
   border: 1px solid #d0382b;
-  height: 46px;
-  border-radius: 3px;
+  height: 44px;
+  border-radius: 5px;
+  font-weight: 400;
+
 
   @media only screen and (min-width: 700px) {
     font-weight: 700;
     width: 250px;
-    height: 30px;
+    height: 27px;
     margin: 0;
     border: 2px solid #eed7d5;
     color: #9e9b9b;
     letter-spacing: 0.81px;
-
     &:first-of-type {
       border-radius: 3px 0 0 3px;
       border-right: none;

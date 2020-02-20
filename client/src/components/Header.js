@@ -13,7 +13,7 @@ const StyledHeader = styled.header`
     top: 18rem;
     left: 5%;
     min-width: 30rem;
-    width: 45%;
+    width: 50%;
   }
 `
 
