@@ -9,7 +9,7 @@ const StyledImg = styled.img`
   bottom: 0;
   width: 100%;
   z-index: -1;
-  height: 30vh;
+  height: 260px;
   background: linear-gradient(
       rgba(0, 0, 0, 0.35) 0,
       rgba(0, 0, 0, 0.35)
@@ -18,7 +18,7 @@ const StyledImg = styled.img`
   background-position: 50%;
   background-size: cover;
   @media only screen and (min-width: 768px) {
-    height: 70vh;
+    height: 575px;
   }
 `
 

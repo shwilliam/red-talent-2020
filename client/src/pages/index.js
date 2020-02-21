@@ -115,7 +115,7 @@ const EventSection = styled.section`
   width: 90%;
   margin: 0 auto 1.5rem auto;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1000px) {
     margin: 1.2rem auto 3rem auto;
     display: flex;
     justify-content: flex-start;
@@ -129,7 +129,7 @@ const EventTitle = styled.h3`
   font-size: 0.85rem;
   color: #383838;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1000px) {
     font-size: 1.25rem;
     margin-top: 0.5rem;
   }
@@ -141,7 +141,7 @@ const EventDesc = styled.p`
   color: #383838;
   font-weight: 600;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1200px) {
     font-size: 1.5rem;
   }
 `
@@ -155,6 +155,7 @@ const Center = styled.div`
 const WhoWeAreImg = styled.img`
   height: 300px;
   width: 100%;
+  object-fit: contain;
 
   @media only screen and (min-width: 768px) {
     height: 500px;
@@ -182,7 +183,7 @@ const EventImg = styled.img`
   height: auto;
   border-radius: 4px;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1000px) {
     flex-basis: 50%;
     margin: unset;
   }
@@ -193,7 +194,7 @@ const EventDetails = styled.section`
   margin: 0 auto;
   text-align: left;
   padding-bottom: 15px;
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1000px) {
     display: flex;
     text-align: left;
     flex-direction: column;
