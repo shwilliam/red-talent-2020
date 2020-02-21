@@ -3,7 +3,6 @@ import styled from 'styled-components'
 
 const StyledImg = styled.img`
   position: absolute;
-  object-fit: cover;
   top: 0;
   left: 0;
   right: 0;
@@ -11,12 +10,18 @@ const StyledImg = styled.img`
   width: 100%;
   z-index: -1;
   height: 30vh;
-
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.35) 0,
+      rgba(0, 0, 0, 0.35)
+    ),
+    url('https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg');
+  background-position: 50%;
+  background-size: cover;
   @media only screen and (min-width: 768px) {
     height: 70vh;
   }
 `
 
-const Banner = ({ image }) => <StyledImg src={image} />
+const Banner = ({image}) => <StyledImg src={image} />
 
 export default Banner
