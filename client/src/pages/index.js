@@ -61,7 +61,8 @@ const WhoWeAreTitle = styled.h1`
   @media only screen and (min-width: 768px) {
     color: #5c5c5c;
     font-size: 1.75rem;
-    margin-top: 15rem;
+    margin-top: 10rem;
+    margin-bottom: 2rem;
   }
 `
 
@@ -115,7 +116,7 @@ const EventSection = styled.section`
   margin: 0 auto 1.5rem auto;
 
   @media only screen and (min-width: 768px) {
-    margin: 5rem auto;
+    margin: 1.2rem auto 3rem auto;
     display: flex;
     justify-content: flex-start;
     max-height: 350px;
@@ -160,6 +161,7 @@ const WhoWeAreImg = styled.img`
     width: auto;
     margin: 0 auto;
     display: block;
+    margin-bottom: 2rem;
   }
 `
 
@@ -224,7 +226,7 @@ const Event = () => {
   return (
     <main>
       <Navigation white route="/" />
-      <Banner image="https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg" />
+      <Banner />
 
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
