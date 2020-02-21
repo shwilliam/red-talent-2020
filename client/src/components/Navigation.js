@@ -121,6 +121,9 @@ const MenuLink = styled.a`
         ${p => (p.active ? '#d0382b' : 'transparent')};
     }
   }
+  @media only screen and (min-width: 1000px) {
+    padding-right: 3rem;
+  }
 `
 
 const HamburgerMenu = styled.p`

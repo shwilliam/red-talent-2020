@@ -85,7 +85,7 @@ const Paragraph = styled.p`
   padding: 0.5rem 0;
   margin-top: 0.5rem;
 
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 1000px) {
     width: 800px;
   }
 `
