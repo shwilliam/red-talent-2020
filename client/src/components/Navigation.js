@@ -15,14 +15,14 @@ const NavBar = styled.nav`
   width: 90%;
   z-index: 999;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     margin: 0 auto;
     width: 100%;
   }
 `
 
 const WhiteNavBar = styled(NavBar)`
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     background: #fff;
   }
 `
@@ -80,7 +80,7 @@ const MenuLinkContainer = styled.div`
   right: 0;
   bottom: 0;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: none;
   }
 `
@@ -169,7 +169,7 @@ const BigTextButton = styled.button`
   @media only screen and (min-width: 400px) {
     padding: 1.25rem 0.5rem 1rem 1rem;
   }
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: none;
   }
 `

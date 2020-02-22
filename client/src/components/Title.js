@@ -8,7 +8,7 @@ const StyledTitle = styled.h1`
   text-transform: capitalize;
   text-align: center;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     color: #fff;
     font-size: 2rem;
   }

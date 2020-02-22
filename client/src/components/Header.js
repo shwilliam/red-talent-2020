@@ -5,7 +5,7 @@ const StyledHeader = styled.header`
   margin: 35px 15px 5px 15px;
   text-align: center;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: flex;
     flex-direction: column;
     align-items: flex-start;

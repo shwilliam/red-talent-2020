@@ -7,7 +7,7 @@ const StyledDiv = styled.div`
   justify-content: center;
   padding: 25px 0;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     padding: 30px 0 50px 0;
   }
 `

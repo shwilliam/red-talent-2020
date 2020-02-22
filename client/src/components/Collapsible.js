@@ -57,11 +57,15 @@ const Dep = styled.h3`
 `
 
 const ContentContainer = styled.p`
-  min-height: 240px;
+  height: 255px;
   padding: 0 0.5rem;
 
-  @media only screen and (min-width: 1200px) {
-    min-height: 180px;
+  @media only screen and (min-width: 1000px) {
+    height: 185px;
+  }
+
+  @media only screen and (min-width: 1500px) {
+    height: 165px;
   }
 `
 

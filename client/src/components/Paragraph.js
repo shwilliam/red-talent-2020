@@ -7,7 +7,7 @@ const StyledP = styled.p`
   color: #5c5c5c;
   text-align: left;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     color: #fff;
     margin-bottom: 30px;
     font-size: 1.15rem;

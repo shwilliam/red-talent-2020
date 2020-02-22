@@ -7,7 +7,7 @@ const StyledLi = styled.li`
   list-style: none;
   border-radius: 6px;
   box-shadow: 0 4px 14px -3px rgba(0, 0, 0, 0.33);
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     width: 250px;
     height: 360px;
   }

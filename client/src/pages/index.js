@@ -158,7 +158,7 @@ const WhoWeAreImg = styled.img`
   object-fit: contain;
 
   @media only screen and (min-width: 768px) {
-    height: 500px;
+    height: 375px;
     width: auto;
     margin: 0 auto;
     display: block;

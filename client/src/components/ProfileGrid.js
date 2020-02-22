@@ -8,7 +8,7 @@ const StyledUl = styled.ul`
   justify-content: center;
   padding: 0;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     grid-template-columns: repeat(2, auto);
     grid-gap: 5rem;
   }
