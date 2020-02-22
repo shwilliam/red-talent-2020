@@ -208,6 +208,7 @@ const EventDetails = styled.section`
 const EventImgContainer = styled.section`
   color: #fff;
   position: relative;
+  overflow: hidden;
 `
 
 const EventImgText = styled.p`
