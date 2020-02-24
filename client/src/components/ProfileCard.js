@@ -98,7 +98,7 @@ const LinkedInLink = styled.a`
   right: 0;
 `
 
-const ProfileCard = ({id, name, desc, imgUrl, dep}) => (
+const ProfileCard = ({name, desc, imgUrl, dep, url}) => (
   <ModalWrapper>
     <ModalOpenButton>
       <StyledDiv>
@@ -107,7 +107,7 @@ const ProfileCard = ({id, name, desc, imgUrl, dep}) => (
           <StyledDep>{dep}</StyledDep>
         </Container>
         <LinkedInLink
-          href={`https://www.linkedin.com/in/${id}`}
+          href={url}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -120,9 +120,9 @@ const ProfileCard = ({id, name, desc, imgUrl, dep}) => (
     <ProfileModal
       name={name}
       imgURL={imgUrl}
-      dep={dep.map(d => DEPS[d]).join(', ')}
+      dep={dep}
       desc={desc}
-      id={id}
+      url={url}
     />
   </ModalWrapper>
 )

@@ -164,7 +164,7 @@ const ModalParagraph = styled.p`
   }
 `
 
-const ProfileModal = ({id, name, imgURL, dep, desc}) => {
+const ProfileModal = ({name, imgURL, dep, desc, url}) => {
   const {isOpen, close} = useModal()
 
   return (
@@ -199,7 +199,7 @@ const ProfileModal = ({id, name, imgURL, dep, desc}) => {
                 <ModalParagraph>{desc}</ModalParagraph>
                 <ModalFooter>
                   <a
-                    href={`https://www.linkedin.com/in/${id}`}
+                    href={url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >

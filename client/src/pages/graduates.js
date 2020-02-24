@@ -41,7 +41,7 @@ const RedBanner = styled.div`
   width: 40vw;
   display: none;
 
-  @media only screen and (min-width: 700px) {
+  @media only screen and (min-width: 768px) {
     display: initial;
   }
 `
@@ -119,23 +119,19 @@ const Home = () => {
 
         <ProfileGrid>
           {profiles
-            .filter((_, i) =>
+            .filter(s =>
               filter && filter.length
-                ? LINKEDIN_IDS[
-                    Object.keys(LINKEDIN_IDS)[i]
-                  ].dep.some(f => filter.includes(f))
+                ? filter.some(f => s.dep.toLowerCase().includes(f))
                 : true,
             )
-            .map((s, i) => (
-              <ProfileGridItem
-                key={s.profile.name.split(' ').join('-')}
-              >
+            .map(s => (
+              <ProfileGridItem key={s.name}>
                 <ProfileCard
-                  name={s.profile.name}
-                  imgUrl={s.profile.imageurl}
-                  desc={s.profile.summary}
-                  dep={LINKEDIN_IDS[Object.keys(LINKEDIN_IDS)[i]].dep}
-                  id={Object.keys(LINKEDIN_IDS)[i]}
+                  name={`${s.name} ${s.lastName}`}
+                  imgUrl={s.imgUrl}
+                  desc={s.bio}
+                  dep={s.dep}
+                  url={s.url}
                 />
               </ProfileGridItem>
             ))}
