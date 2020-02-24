@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Collapsible, Banner, Navigation} from '../components'
+import { Button, Collapsible, Banner, Navigation } from '../components'
 import styled from 'styled-components'
 import devLogo from '../../assets/images/dev.svg'
 import dmLogo from '../../assets/images/dm.svg'
@@ -184,7 +184,6 @@ const EventImg = styled.img`
   border-radius: 4px;
 
   @media only screen and (min-width: 1000px) {
-    flex-basis: 50%;
     margin: unset;
   }
 `
@@ -202,6 +201,7 @@ const EventDetails = styled.section`
     align-items: center;
     flex-basis: 50%;
     border: 0.3px solid #979797;
+    border-radius: 6px;
   }
 `
 
@@ -209,6 +209,7 @@ const EventImgContainer = styled.section`
   color: #fff;
   position: relative;
   overflow: hidden;
+  flex-basis: 50%;
 `
 
 const EventImgText = styled.p`
@@ -227,63 +228,57 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white route="/" />
+      <Navigation white route='/' />
       <Banner />
 
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
-        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+        <Button to='https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869'>
           Join Event
         </Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
       <WhoWeAreImg src={Students} />
       <Paragraph>
-        RED Academy is a leading-edge design and technology school,
-        with programs designed unlike any other. We also produce the
-        professionals of tomorrow unlike any other.
+        RED Academy is a leading-edge design and technology school, with
+        programs designed unlike any other. We also produce the professionals of
+        tomorrow unlike any other.
       </Paragraph>
       <Paragraph>
         With the real workplace in mind, staying up to date with the
         ever-growing tech industry.
       </Paragraph>
       <Paragraph>
-        Whether you are a start-up looking for a new member for your
-        great idea, or an established company looking to grow your
-        team, you are sure to find your next great hire at our Talent
-        Connect Event.
+        Whether you are a start-up looking for a new member for your great idea,
+        or an established company looking to grow your team, you are sure to
+        find your next great hire at our Talent Connect Event.
       </Paragraph>
       <KeySection>
-        <Title style={{color: '#5c5c5c'}}>
-          Our Key Qualifications
-        </Title>
+        <Title style={{ color: '#5c5c5c' }}>Our Key Qualifications</Title>
         <KeyDesktopStyles>
-          <Collapsible icon={uxuiLogo} dep="UI/UX DESIGN">
+          <Collapsible icon={uxuiLogo} dep='UI/UX DESIGN'>
             <DepParagraph>
-              UI & UX students take a human-centric approach in
-              designing delightful experiences that meet business
-              goals while balancing seamless interactivity and
-              navigation.
+              UI & UX students take a human-centric approach in designing
+              delightful experiences that meet business goals while balancing
+              seamless interactivity and navigation.
             </DepParagraph>
           </Collapsible>
-          <Collapsible icon={devLogo} dep="DEVELOPMENT">
+          <Collapsible icon={devLogo} dep='DEVELOPMENT'>
             <DepParagraph>
-              Web and App Development students code websites and build
-              web and mobile applications using the most in-demand
-              technologies.
+              Web and App Development students code websites and build web and
+              mobile applications using the most in-demand technologies.
             </DepParagraph>
           </Collapsible>
-          <Collapsible icon={dmLogo} dep="DIGITAL MARKETING">
+          <Collapsible icon={dmLogo} dep='DIGITAL MARKETING'>
             <DepParagraph>
-              Digital Marketing students create and deploy online
-              strategies, and are versed in today’s core industry
-              skills.
+              Digital Marketing students create and deploy online strategies,
+              and are versed in today’s core industry skills.
             </DepParagraph>
           </Collapsible>
         </KeyDesktopStyles>
       </KeySection>
-      <Title style={{color: '#5c5c5c'}}>Event Details</Title>
+      <Title style={{ color: '#5c5c5c' }}>Event Details</Title>
       <EventSection>
         <EventImgContainer>
           <EventImg src={TalentPhoto} />
@@ -296,8 +291,8 @@ const Event = () => {
           <EventDesc>RED Academy</EventDesc>
         </EventDetails>
       </EventSection>
-      <Center style={{marginBottom: '5rem'}}>
-        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+      <Center style={{ marginBottom: '5rem' }}>
+        <Button to='https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869'>
           Join Event
         </Button>
       </Center>
