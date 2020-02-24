@@ -181,10 +181,12 @@ const EventImg = styled.img`
   width: 100%;
   margin: 0 auto;
   height: auto;
-  border-radius: 4px;
+  border-radius: 6px;
 
   @media only screen and (min-width: 1000px) {
     margin: unset;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 `
 
@@ -201,7 +203,8 @@ const EventDetails = styled.section`
     align-items: center;
     flex-basis: 50%;
     border: 0.3px solid #979797;
-    border-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
   }
 `
 
