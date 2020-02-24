@@ -68,7 +68,7 @@ const Home = () => {
 
   return (
     <>
-      <Navigation />
+      <Navigation white />
       <GraduatesBanner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
       <RedBanner />
       <Header>

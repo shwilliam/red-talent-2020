@@ -133,10 +133,11 @@ const HamburgerMenu = styled.p`
   top: 0;
   right: 0;
   padding: 1.35rem 1rem 1rem 1rem;
-  color: #fff;
+  color: ${p => (p.white ? '#000' : '#fff')};
   font-size: 2.1rem;
 
   @media only screen and (min-width: 768px) {
+    color: #fff;
     display: none;
   }
 `
@@ -175,6 +176,7 @@ const BigTextButton = styled.button`
 `
 
 const ModalHeader = styled.div`
+  background-color: #fff;
   position: sticky;
   top: 0;
   z-index: 999;
@@ -187,7 +189,7 @@ const NavigationModal = () => {
   const {close} = useModal()
 
   return (
-    <Modal overlay>
+    <Modal overlay lockScroll={false}>
       <ModalHeader>
         <MobileLogo src={logo} />
         <BigTextButton onClick={close}>
@@ -211,17 +213,17 @@ const NavigationModal = () => {
   )
 }
 
-const Navigation = ({route}) => {
+const Navigation = ({route, white}) => {
   const {isOpen, open} = useModal()
 
   return (
     <Container>
       <Link href="/">
         <Logo src={logo} />
-        <MobileLogo src={mobileLogo} />
+        <MobileLogo src={white ? logo : mobileLogo} />
       </Link>
 
-      <HamburgerMenu onClick={open}>
+      <HamburgerMenu onClick={open} white={white}>
         <IoIosMenu />
       </HamburgerMenu>
 
@@ -252,7 +254,7 @@ export default ({absolute = false, white = false, route}) => (
       <WhiteNavBar
         style={{position: absolute ? 'absolute' : 'unset'}}
       >
-        <Navigation route={route} />
+        <Navigation white route={route} />
       </WhiteNavBar>
     ) : (
       <NavBar style={{position: absolute ? 'absolute' : 'unset'}}>
