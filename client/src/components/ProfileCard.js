@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import {ModalWrapper, useModal} from 'react-modal-wrap'
-import {ProfileModal, TextButton} from './index'
-import {IoLogoLinkedin} from 'react-icons/io'
+import { ModalWrapper, useModal } from 'react-modal-wrap'
+import { ProfileModal, TextButton } from './index'
+import { IoLogoLinkedin } from 'react-icons/io'
 
 const DEPS = {
   mar: 'Marketer',
@@ -10,8 +10,8 @@ const DEPS = {
   des: 'Designer',
 }
 
-const ModalOpenButton = ({children}) => {
-  const {open} = useModal()
+const ModalOpenButton = ({ children }) => {
+  const { open } = useModal()
 
   return <TextButton onClick={open}>{children}</TextButton>
 }
@@ -49,6 +49,7 @@ const StyledP = styled.p`
   margin: 0;
   width: 65%;
   line-height: 1.2;
+  z-index: -999;
 
   @media only screen and (min-width: 768px) {
     font-size: 1rem;
@@ -96,9 +97,10 @@ const LinkedInLink = styled.a`
   position: absolute;
   bottom: 0;
   right: 0;
+  z-index: -999;
 `
 
-const ProfileCard = ({name, desc, imgUrl, dep, url}) => (
+const ProfileCard = ({ name, desc, imgUrl, dep, url }) => (
   <ModalWrapper>
     <ModalOpenButton>
       <StyledDiv>
