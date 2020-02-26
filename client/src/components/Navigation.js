@@ -133,7 +133,7 @@ const HamburgerMenu = styled.p`
   top: 0;
   right: 0;
   padding: 1.35rem 1rem 1rem 1rem;
-  color: ${p => (p.white ? '#000' : '#fff')};
+  color: ${p => (p.white && !p.transparentMobile ? '#000' : '#fff')};
   font-size: 2.1rem;
 
   @media only screen and (min-width: 768px) {
@@ -198,10 +198,8 @@ const NavigationModal = () => {
       </ModalHeader>
 
       <MenuLinkContainer>
-        <MenuLink disabled href="/">
-          Graduates
-        </MenuLink>
-        <MenuLink href="/">About us</MenuLink>
+        <MenuLink href="/">Graduates</MenuLink>
+        <MenuLink href="/about">About us</MenuLink>
         <Button
           padded
           to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869"
@@ -213,27 +211,33 @@ const NavigationModal = () => {
   )
 }
 
-const Navigation = ({route, white}) => {
+const Navigation = ({route, white, transparentMobile}) => {
   const {isOpen, open} = useModal()
 
   return (
     <Container>
       <Link href="/">
         <Logo src={logo} />
-        <MobileLogo src={white ? logo : mobileLogo} />
+        <MobileLogo
+          src={white && !transparentMobile ? logo : mobileLogo}
+        />
       </Link>
 
-      <HamburgerMenu onClick={open} white={white}>
+      <HamburgerMenu
+        onClick={open}
+        white={white}
+        transparentMobile={transparentMobile}
+      >
         <IoIosMenu />
       </HamburgerMenu>
 
       {isOpen && <NavigationModal />}
 
       <DesktopNavBar>
-        <MenuLink disabled href="/">
+        <MenuLink active={route === '/'} href="/">
           Graduates
         </MenuLink>
-        <MenuLink active={route === '/'} href="/">
+        <MenuLink active={route === '/about'} href="/about">
           About us
         </MenuLink>
         <Button
@@ -248,13 +252,22 @@ const Navigation = ({route, white}) => {
   )
 }
 
-export default ({absolute = false, white = false, route}) => (
+export default ({
+  absolute = false,
+  white = false,
+  transparentMobile = false,
+  route,
+}) => (
   <ModalWrapper>
     {white ? (
       <WhiteNavBar
         style={{position: absolute ? 'absolute' : 'unset'}}
       >
-        <Navigation white route={route} />
+        <Navigation
+          white
+          transparentMobile={transparentMobile}
+          route={route}
+        />
       </WhiteNavBar>
     ) : (
       <NavBar style={{position: absolute ? 'absolute' : 'unset'}}>

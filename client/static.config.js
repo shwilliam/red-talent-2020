@@ -44,7 +44,7 @@ const getGraduates = () =>
 export default {
   getRoutes: async () => [
     {
-      path: '/graduates',
+      path: '/',
       getData: async () => ({
         profiles: await getGraduates(),
       }),
