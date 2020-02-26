@@ -6,8 +6,8 @@ import dmLogo from '../../assets/images/dm.svg'
 import uxuiLogo from '../../assets/images/ux_ui.svg'
 import Footer from '../components/Footer'
 import ReactGA from 'react-ga'
-import TalentPhoto from '../../assets/images/talent-connect.png'
-import Students from '../../assets/images/students.png'
+import TalentPhoto from '../../assets/images/talent-connect.jpg'
+import Students from '../../assets/images/students.jpg'
 
 if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 

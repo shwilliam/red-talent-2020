@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import {useRouteData} from 'react-static'
+import BannerImg from '../../assets/images/banner.jpg'
 import {
   Navigation,
   ProfileGrid,
@@ -24,7 +25,7 @@ if (typeof window !== 'undefined') ReactGA.pageview(location.pathname)
 const GraduatesBanner = styled.img`
   width: 100%;
   object-fit: cover;
-  object-position: top;
+  object-position: center;
   height: 12rem;
   z-index: -99;
 
@@ -69,7 +70,7 @@ const Home = () => {
   return (
     <>
       <Navigation route="/" white />
-      <GraduatesBanner src="https://redacademy.com/content/uploads/2017/05/homepage-test-23.jpg" />
+      <GraduatesBanner src={BannerImg} />
       <RedBanner />
       <Header>
         <Title>Graduates</Title>

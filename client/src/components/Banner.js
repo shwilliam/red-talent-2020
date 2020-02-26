@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import BannerImg from '../../assets/images/about-banner.jpg'
 
 const StyledImg = styled.img`
   position: absolute;
@@ -14,7 +15,7 @@ const StyledImg = styled.img`
       rgba(0, 0, 0, 0.35) 0,
       rgba(0, 0, 0, 0.35)
     ),
-    url('https://redacademy.com/content/uploads/2019/05/IMG_6355.jpg');
+    url(${BannerImg});
   background-position: 50%;
   background-size: cover;
   @media only screen and (min-width: 768px) {
