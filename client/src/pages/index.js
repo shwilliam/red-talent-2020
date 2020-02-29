@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useRouteData } from 'react-static'
+import React, {useState} from 'react'
+import {useRouteData} from 'react-static'
 import BannerImg from '../../assets/images/banner.jpg'
 import {
   Navigation,
@@ -11,9 +11,9 @@ import {
   Label,
   GraduatesLabel,
   Paragraph,
-  Header
+  Header,
 } from '../components'
-import { LINKEDIN_IDS } from '../../data'
+import {LINKEDIN_IDS} from '../../data'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
 import ReactGA from 'react-ga'
@@ -40,34 +40,27 @@ const GraduatesContainer = styled.main`
 `
 
 const Home = () => {
-  const { profiles } = useRouteData()
-  const [filter, setFilter] = useState(['dev'])
+  const {profiles} = useRouteData()
+  const [filter, setFilter] = useState('dev')
 
-  const toggleFilter = (dep, e) => {
-    const idx = filter.indexOf(dep)
-    const filterCopy = [...filter]
-
-    if (e.target.checked) {
-      filterCopy.push(dep)
-    } else {
-      filterCopy.splice(idx, 1)
-    }
-    setFilter(filterCopy)
+  const toggleFilter = dep => {
+    setFilter(dep)
   }
 
   return (
     <>
-      <Navigation route='/' white />
+      <Navigation route="/" white />
       <GraduatesBanner src={BannerImg} />
       <Header>
         <Title>Graduates</Title>
 
         <Paragraph>
-          Meet the talents you'll connect with at Red Academy's event! Our
-          Recent graduates have all worked with real clients, learned today's
-          core digital skills and become industry-ready professionals. Their
-          Knowledge, passion and innovation will help you move your business to
-          the next level!
+          Meet the talents you'll connect with at Red Academy's event!
+          Our Recent graduates have all worked with real clients,
+          learned today's core digital skills and become
+          industry-ready professionals. Their Knowledge, passion and
+          innovation will help you move your business to the next
+          level!
         </Paragraph>
       </Header>
 
@@ -76,10 +69,10 @@ const Home = () => {
           <Label checked={filter.includes('des')}>
             Designers
             <Input
-              onChange={e => toggleFilter('des', e)}
-              type='checkbox'
-              name='filter-design'
-              value='design'
+              onChange={() => toggleFilter('des')}
+              type="checkbox"
+              name="filter-design"
+              value="design"
               checked={filter.includes('des')}
             />
           </Label>
@@ -87,10 +80,10 @@ const Home = () => {
           <Label checked={filter.includes('dev')}>
             Developers
             <Input
-              onChange={e => toggleFilter('dev', e)}
-              type='checkbox'
-              name='filter-developers'
-              value='developers'
+              onChange={() => toggleFilter('dev')}
+              type="checkbox"
+              name="filter-developers"
+              value="developers"
               checked={filter.includes('dev')}
             />
           </Label>
@@ -98,10 +91,10 @@ const Home = () => {
           <Label checked={filter.includes('mar')}>
             Marketers
             <Input
-              onChange={e => toggleFilter('mar', e)}
-              type='checkbox'
-              name='filter-marketers'
-              value='marketers'
+              onChange={() => toggleFilter('mar')}
+              type="checkbox"
+              name="filter-marketers"
+              value="marketers"
               checked={filter.includes('mar')}
             />
           </Label>
@@ -109,11 +102,7 @@ const Home = () => {
 
         <ProfileGrid>
           {profiles
-            .filter(s =>
-              filter && filter.length
-                ? filter.some(f => s.dep.toLowerCase().includes(f))
-                : true
-            )
+            .filter(s => s.dep.toLowerCase().includes(filter))
             .map(s => (
               <ProfileGridItem key={s.name}>
                 <ProfileCard
