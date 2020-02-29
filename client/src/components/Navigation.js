@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import {IoMdClose, IoIosMenu} from 'react-icons/io'
 import logo from '../../assets/images/logo.svg'
 import mobileLogo from '../../assets/images/logo_mobile.svg'
-import {Button} from './index'
 
 const NavBar = styled.nav`
   color: #fff;
@@ -102,8 +101,7 @@ const MenuLink = styled.a`
   pointer-events: ${p => (p.disabled ? 'none' : 'initial')};
 
   &:hover {
-    color: ${p =>
-      p.disabled ? '#ccc' : p.active ? '#d0382b' : '#333'};
+    color: ${p => (p.disabled ? '#ccc' : '#d0382b')};
   }
 
   @media only screen and (min-width: 768px) {
