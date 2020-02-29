@@ -1,10 +1,10 @@
 import React from 'react'
-import {ModalWrapper, Modal, useModal} from 'react-modal-wrap'
+import { ModalWrapper, Modal, useModal } from 'react-modal-wrap'
 import styled from 'styled-components'
-import {IoMdClose, IoIosMenu} from 'react-icons/io'
+import { IoMdClose, IoIosMenu } from 'react-icons/io'
 import logo from '../../assets/images/logo.svg'
 import mobileLogo from '../../assets/images/logo_mobile.svg'
-import {Button} from './index'
+import { Button } from './index'
 
 const NavBar = styled.nav`
   color: #fff;
@@ -89,8 +89,7 @@ const MenuLink = styled.a`
   top: 3.25px;
   display: flex;
   flex-direction: column;
-  color: ${p =>
-    p.disabled ? '#ccc' : p.active ? '#d0382b' : '#1b1a1a'};
+  color: ${p => (p.disabled ? '#ccc' : p.active ? '#d0382b' : '#1b1a1a')};
   padding: 1rem 0;
   font-size: 1.2rem;
   text-decoration: none;
@@ -102,8 +101,7 @@ const MenuLink = styled.a`
   pointer-events: ${p => (p.disabled ? 'none' : 'initial')};
 
   &:hover {
-    color: ${p =>
-      p.disabled ? '#ccc' : p.active ? '#d0382b' : '#333'};
+    color: ${p => (p.disabled ? '#ccc' : p.active ? '#d0382b' : '#333')};
   }
 
   @media only screen and (min-width: 768px) {
@@ -117,8 +115,7 @@ const MenuLink = styled.a`
       margin: 0 auto;
       width: 35px;
       padding-top: 6px;
-      border-bottom: 1px solid
-        ${p => (p.active ? '#d0382b' : 'transparent')};
+      border-bottom: 1px solid ${p => (p.active ? '#d0382b' : 'transparent')};
     }
   }
   @media only screen and (min-width: 1000px) {
@@ -186,7 +183,7 @@ const ModalHeader = styled.div`
 `
 
 const NavigationModal = () => {
-  const {close} = useModal()
+  const { close } = useModal()
 
   return (
     <Modal overlay lockScroll={false}>
@@ -198,29 +195,21 @@ const NavigationModal = () => {
       </ModalHeader>
 
       <MenuLinkContainer>
-        <MenuLink href="/">Graduates</MenuLink>
-        <MenuLink href="/about">About us</MenuLink>
-        <Button
-          padded
-          to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869"
-        >
-          Event
-        </Button>
+        <MenuLink href='/'>Graduates</MenuLink>
+        <MenuLink href='/about'>About us</MenuLink>
       </MenuLinkContainer>
     </Modal>
   )
 }
 
-const Navigation = ({route, white, transparentMobile}) => {
-  const {isOpen, open} = useModal()
+const Navigation = ({ route, white, transparentMobile }) => {
+  const { isOpen, open } = useModal()
 
   return (
     <Container>
-      <Link href="/">
+      <Link href='/about'>
         <Logo src={logo} />
-        <MobileLogo
-          src={white && !transparentMobile ? logo : mobileLogo}
-        />
+        <MobileLogo src={white && !transparentMobile ? logo : mobileLogo} />
       </Link>
 
       <HamburgerMenu
@@ -234,19 +223,12 @@ const Navigation = ({route, white, transparentMobile}) => {
       {isOpen && <NavigationModal />}
 
       <DesktopNavBar>
-        <MenuLink active={route === '/'} href="/">
+        <MenuLink active={route === '/'} href='/'>
           Graduates
         </MenuLink>
-        <MenuLink active={route === '/about'} href="/about">
+        <MenuLink active={route === '/about'} href='/about'>
           About us
         </MenuLink>
-        <Button
-          small
-          noBold
-          to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869"
-        >
-          Event
-        </Button>
       </DesktopNavBar>
     </Container>
   )
@@ -256,21 +238,15 @@ export default ({
   absolute = false,
   white = false,
   transparentMobile = false,
-  route,
+  route
 }) => (
   <ModalWrapper>
     {white ? (
-      <WhiteNavBar
-        style={{position: absolute ? 'absolute' : 'unset'}}
-      >
-        <Navigation
-          white
-          transparentMobile={transparentMobile}
-          route={route}
-        />
+      <WhiteNavBar style={{ position: absolute ? 'absolute' : 'unset' }}>
+        <Navigation white transparentMobile={transparentMobile} route={route} />
       </WhiteNavBar>
     ) : (
-      <NavBar style={{position: absolute ? 'absolute' : 'unset'}}>
+      <NavBar style={{ position: absolute ? 'absolute' : 'unset' }}>
         <Navigation route={route} />
       </NavBar>
     )}
