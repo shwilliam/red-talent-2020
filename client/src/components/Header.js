@@ -10,13 +10,13 @@ const StyledHeader = styled.header`
     flex-direction: column;
     align-items: flex-start;
     position: absolute;
-    top: 18rem;
+    top: 23rem;
     left: 5%;
     min-width: 30rem;
     width: 50%;
   }
 `
 
-const Header = ({children}) => <StyledHeader>{children}</StyledHeader>
+const Header = ({ children }) => <StyledHeader>{children}</StyledHeader>
 
 export default Header
