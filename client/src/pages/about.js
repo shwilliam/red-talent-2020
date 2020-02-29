@@ -1,5 +1,5 @@
 import React from 'react'
-import {Button, Collapsible, Banner, Navigation} from '../components'
+import { Button, Collapsible, Banner, Navigation } from '../components'
 import styled from 'styled-components'
 import devLogo from '../../assets/images/dev.svg'
 import dmLogo from '../../assets/images/dm.svg'
@@ -61,8 +61,7 @@ const WhoWeAreTitle = styled.h1`
   @media only screen and (min-width: 768px) {
     color: #5c5c5c;
     font-size: 1.75rem;
-    margin-top: 10rem;
-    margin-bottom: 2rem;
+    margin-top: 13rem;
   }
 `
 
@@ -86,7 +85,7 @@ const Paragraph = styled.p`
   margin-top: 0.5rem;
 
   @media only screen and (min-width: 1000px) {
-    width: 800px;
+    width: 570px;
   }
 `
 
@@ -100,6 +99,7 @@ const DepParagraph = styled.p`
 
   @media only screen and (min-width: 768px) {
     padding: 1rem 0;
+    text-align: center;
   }
 `
 
@@ -107,7 +107,7 @@ const KeySection = styled.section`
   margin-top: 2rem;
 
   @media only screen and (min-width: 768px) {
-    margin: 5rem 0;
+    margin: 5rem 0 0 0;
   }
 `
 
@@ -200,7 +200,6 @@ const EventDetails = styled.section`
     justify-content: center;
     align-items: center;
     flex-basis: 50%;
-    border: 0.3px solid #979797;
     border-radius: 6px;
   }
 `
@@ -228,63 +227,64 @@ const EventImgText = styled.p`
 const Event = () => {
   return (
     <main>
-      <Navigation white transparentMobile route="/about" />
+      <Navigation white transparentMobile route='/about' />
       <Banner />
 
       <TalentSection>
         <Title>Talent Connect at RED Academy</Title>
         <TalentDate>05 March, 2020</TalentDate>
-        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
+        <Button to='https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869'>
           Join Event
         </Button>
       </TalentSection>
       <WhoWeAreTitle>Who Are We?</WhoWeAreTitle>
       <WhoWeAreImg src={Students} />
       <Paragraph>
-        RED Academy is a leading-edge design and technology school,
-        with programs designed unlike any other. We also produce the
-        professionals of tomorrow unlike any other.
+        RED Academy is a leading-edge design and technology school, with
+        programs designed unlike any other. We also produce the professionals of
+        tomorrow unlike any other.
       </Paragraph>
       <Paragraph>
         With the real workplace in mind, staying up to date with the
         ever-growing tech industry.
       </Paragraph>
       <Paragraph>
-        Whether you are a start-up looking for a new member for your
-        great idea, or an established company looking to grow your
-        team, you are sure to find your next great hire at our Talent
-        Connect Event.
+        Whether you are a start-up looking for a new member for your great idea,
+        or an established company looking to grow your team, you are sure to
+        find your next great hire at our Talent Connect Event.
       </Paragraph>
       <KeySection>
-        <Title style={{color: '#5c5c5c'}}>
-          Our Key Qualifications
-        </Title>
+        <Title style={{ color: '#5c5c5c' }}>Our Key Qualifications</Title>
         <KeyDesktopStyles>
-          <Collapsible icon={uxuiLogo} dep="UI/UX DESIGN">
+          <Collapsible icon={uxuiLogo} dep='UI/UX DESIGN'>
             <DepParagraph>
-              UI & UX students take a human-centric approach in
-              designing delightful experiences that meet business
-              goals while balancing seamless interactivity and
-              navigation.
+              UI & UX students take a human-centric approach in designing
+              delightful experiences that meet business goals while balancing
+              seamless interactivity and navigation.
             </DepParagraph>
           </Collapsible>
-          <Collapsible icon={devLogo} dep="DEVELOPMENT">
+          <Collapsible icon={devLogo} dep='DEVELOPMENT'>
             <DepParagraph>
-              Web and App Development students code websites and build
-              web and mobile applications using the most in-demand
-              technologies.
+              Web and App Development students code websites and build web and
+              mobile applications using the most in-demand technologies.
             </DepParagraph>
           </Collapsible>
-          <Collapsible icon={dmLogo} dep="DIGITAL MARKETING">
+          <Collapsible icon={dmLogo} dep='DIGITAL MARKETING'>
             <DepParagraph>
-              Digital Marketing students create and deploy online
-              strategies, and are versed in today’s core industry
-              skills.
+              Digital Marketing students create and deploy online strategies,
+              and are versed in today’s core industry skills.
             </DepParagraph>
           </Collapsible>
         </KeyDesktopStyles>
       </KeySection>
-      <Title style={{color: '#5c5c5c'}}>Event Details</Title>
+      <Center style={{ margin: '1rem auto 4rem auto' }}>
+        <Button noFill to='/graduates'>
+          See Graduates
+        </Button>
+      </Center>
+      <Title style={{ color: '#5c5c5c', marginTop: '6rem' }}>
+        Event Details
+      </Title>
       <EventSection>
         <EventImgContainer>
           <EventImg src={TalentPhoto} />
@@ -294,14 +294,12 @@ const Event = () => {
           <EventTitle>Date and Time</EventTitle>
           <EventDesc>05 March, 2020 6PM</EventDesc>
           <EventTitle>Location</EventTitle>
-          <EventDesc>RED Academy</EventDesc>
+          <EventDesc style={{ marginBottom: '1.5rem' }}>RED Academy</EventDesc>
+          <Button to='https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869'>
+            Join Event
+          </Button>
         </EventDetails>
       </EventSection>
-      <Center style={{marginBottom: '5rem'}}>
-        <Button to="https://www.eventbrite.ca/e/red-academy-co-op-talent-connect-tickets-90332810869">
-          Join Event
-        </Button>
-      </Center>
       <Footer />
     </main>
   )

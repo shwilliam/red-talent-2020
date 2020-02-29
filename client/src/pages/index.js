@@ -1,5 +1,5 @@
-import React, {useState} from 'react'
-import {useRouteData} from 'react-static'
+import React, { useState } from 'react'
+import { useRouteData } from 'react-static'
 import BannerImg from '../../assets/images/banner.jpg'
 import {
   Navigation,
@@ -11,9 +11,9 @@ import {
   Label,
   GraduatesLabel,
   Paragraph,
-  Header,
+  Header
 } from '../components'
-import {LINKEDIN_IDS} from '../../data'
+import { LINKEDIN_IDS } from '../../data'
 import Footer from '../components/Footer'
 import styled from 'styled-components'
 import ReactGA from 'react-ga'
@@ -28,22 +28,10 @@ const GraduatesBanner = styled.img`
   object-position: center;
   height: 12rem;
   z-index: -99;
+  filter: brightness(60%);
 
   @media only screen and (min-width: 700px) {
-    height: 30rem;
-  }
-`
-
-const RedBanner = styled.div`
-  height: 30rem;
-  background-color: #b84334;
-  position: absolute;
-  left: 0;
-  width: 40vw;
-  display: none;
-
-  @media only screen and (min-width: 768px) {
-    display: initial;
+    height: 35rem;
   }
 `
 
@@ -52,7 +40,7 @@ const GraduatesContainer = styled.main`
 `
 
 const Home = () => {
-  const {profiles} = useRouteData()
+  const { profiles } = useRouteData()
   const [filter, setFilter] = useState(['dev'])
 
   const toggleFilter = (dep, e) => {
@@ -69,19 +57,17 @@ const Home = () => {
 
   return (
     <>
-      <Navigation route="/" white />
+      <Navigation route='/' white />
       <GraduatesBanner src={BannerImg} />
-      <RedBanner />
       <Header>
         <Title>Graduates</Title>
 
         <Paragraph>
-          Meet the talents you'll connect with at Red Academy's event!
-          Our Recent graduates have all worked with real clients,
-          learned today's core digital skills and become
-          industry-ready professionals. Their Knowledge, passion and
-          innovation will help you move your business to the next
-          level!
+          Meet the talents you'll connect with at Red Academy's event! Our
+          Recent graduates have all worked with real clients, learned today's
+          core digital skills and become industry-ready professionals. Their
+          Knowledge, passion and innovation will help you move your business to
+          the next level!
         </Paragraph>
       </Header>
 
@@ -91,9 +77,9 @@ const Home = () => {
             Designers
             <Input
               onChange={e => toggleFilter('des', e)}
-              type="checkbox"
-              name="filter-design"
-              value="design"
+              type='checkbox'
+              name='filter-design'
+              value='design'
               checked={filter.includes('des')}
             />
           </Label>
@@ -102,9 +88,9 @@ const Home = () => {
             Developers
             <Input
               onChange={e => toggleFilter('dev', e)}
-              type="checkbox"
-              name="filter-developers"
-              value="developers"
+              type='checkbox'
+              name='filter-developers'
+              value='developers'
               checked={filter.includes('dev')}
             />
           </Label>
@@ -113,9 +99,9 @@ const Home = () => {
             Marketers
             <Input
               onChange={e => toggleFilter('mar', e)}
-              type="checkbox"
-              name="filter-marketers"
-              value="marketers"
+              type='checkbox'
+              name='filter-marketers'
+              value='marketers'
               checked={filter.includes('mar')}
             />
           </Label>
@@ -126,7 +112,7 @@ const Home = () => {
             .filter(s =>
               filter && filter.length
                 ? filter.some(f => s.dep.toLowerCase().includes(f))
-                : true,
+                : true
             )
             .map(s => (
               <ProfileGridItem key={s.name}>
